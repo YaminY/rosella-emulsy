@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "cart": "购物车 ({count})",
+    "admin": "管理"
+  },
+  "home": {
+    "hero": {
+      "title": "大自然的呵护，献给您的肌肤",
+      "subtitle": "发现我们手工制作的天然护肤品，用大自然的精粹成分，倾注爱心制成。",
+      "cta": "立即购买",
+      "learnMore": "了解更多"
+    },
+    "featured": {
+      "title": "精选产品",
+      "subtitle": "我们最受欢迎的天然产品，为您的护肤程序精心打造。"
+    },
+    "about": {
+      "title": "为什么选择Rosella Emulsy？",
+      "description": "我们相信自然的力量。每款产品均采用有机和可持续来源的成分小批量手工制作。不含刺激性化学物质，只有纯净的植物精华，您的肌肤会爱上它。",
+      "values": [
+        {
+          "title": "100%天然",
+          "description": "不含合成化学品、对羟基苯甲酸酯或人工香料"
+        },
+        {
+          "title": "手工制作",
+          "description": "小批量生产，注重细节，精心制作"
+        },
+        {
+          "title": "可持续",
+          "description": "环保包装和合乎道德采购的成分"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "保持联系",
+      "subtitle": "第一时间了解新产品和独家优惠。",
+      "placeholder": "您的电子邮箱",
+      "button": "订阅"
+    }
+  },
+  "products": {
+    "title": "我们的产品",
+    "subtitle": "探索我们的天然护肤品系列",
+    "all": "全部",
+    "available": "现货",
+    "comingSoon": "即将推出",
+    "addToCart": "加入购物车",
+    "viewDetails": "查看详情",
+    "outOfStock": "即将推出",
+    "size": "规格",
+    "ingredients": "成分",
+    "currency": "JOD",
+    "approx": "≈ {amount} {currency}"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "您的购物车是空的",
+    "emptyHint": "浏览我们的产品并添加您喜欢的商品",
+    "total": "总计",
+    "subtotal": "小计",
+    "checkout": "去结算",
+    "continueShopping": "继续购物",
+    "remove": "删除",
+    "quantity": "数量"
+  },
+  "checkout": {
+    "title": "结算",
+    "contactInfo": "联系信息",
+    "fullName": "全名",
+    "email": "电子邮箱",
+    "phone": "电话号码",
+    "shippingAddress": "收货地址",
+    "address": "地址",
+    "city": "城市",
+    "country": "国家",
+    "orderSummary": "订单摘要",
+    "payNow": "立即支付 ({amount} JOD)",
+    "processing": "处理中...",
+    "successTitle": "支付成功！",
+    "successMessage": "感谢您的订单。您将很快收到确认邮件。",
+    "errorTitle": "支付失败",
+    "errorMessage": "出了点问题。请重试。"
+  },
+  "footer": {
+    "description": "手工制作的天然护肤品，以爱心和尊重大自然的态度精心打造。",
+    "quickLinks": "快速链接",
+    "contact": "联系我们",
+    "email": "hello@rosellaemulsy.com",
+    "phone": "+962 7 9XXX XXXX",
+    "rights": "© {year} Rosella Emulsy. 保留所有权利。",
+    "madeWith": "用 ❤️ 在约旦制作"
+  },
+  "admin": {
+    "title": "管理面板",
+    "loginTitle": "管理员登录",
+    "password": "密码",
+    "login": "登录",
+    "logout": "退出",
+    "addProduct": "添加产品",
+    "editProduct": "编辑产品",
+    "deleteProduct": "删除",
+    "save": "保存更改",
+    "cancel": "取消",
+    "products": "产品",
+    "id": "ID",
+    "name": "名称",
+    "price": "价格",
+    "status": "状态",
+    "actions": "操作",
+    "successSaved": "产品保存成功",
+    "successDeleted": "产品删除成功",
+    "confirmDelete": "您确定要删除此产品吗？",
+    "available": "现货",
+    "comingSoonStatus": "即将推出",
+    "newProduct": "新产品",
+    "languageNote": "请填写所有语言字段"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ja": "日本語",
+    "zh": "中文",
+    "ko": "한국어"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rosella-emulsy-backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/app.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "axios": "^1.7.0"
+  }
+}

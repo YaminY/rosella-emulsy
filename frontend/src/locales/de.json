@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cart": "Warenkorb ({count})",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Natürliche Pflege für Ihre Haut",
+      "subtitle": "Entdecken Sie unsere handgefertigten Naturkosmetikprodukte, mit Liebe aus den besten natürlichen Zutaten hergestellt.",
+      "cta": "Jetzt einkaufen",
+      "learnMore": "Mehr erfahren"
+    },
+    "featured": {
+      "title": "Empfohlene Produkte",
+      "subtitle": "Unsere beliebtesten Naturkreationen, sorgfältig für Ihre Hautpflegeroutine entwickelt."
+    },
+    "about": {
+      "title": "Warum Rosella Emulsy?",
+      "description": "Wir glauben an die Kraft der Natur. Jedes Produkt wird in kleinen Chargen handgefertigt mit biologischen und nachhaltig bezogenen Inhaltsstoffen. Keine aggressiven Chemikalien, nur reine Pflanzenstoffe, die Ihre Haut lieben wird.",
+      "values": [
+        {
+          "title": "100% Natürlich",
+          "description": "Keine synthetischen Chemikalien, Parabene oder künstliche Duftstoffe"
+        },
+        {
+          "title": "Handgefertigt",
+          "description": "Kleine Chargen mit Sorgfalt und Liebe zum Detail hergestellt"
+        },
+        {
+          "title": "Nachhaltig",
+          "description": "Umweltfreundliche Verpackung und ethisch bezogene Inhaltsstoffe"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "Bleiben Sie in Kontakt",
+      "subtitle": "Erfahren Sie als Erster von neuen Produkten und exklusiven Angeboten.",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "button": "Abonnieren"
+    }
+  },
+  "products": {
+    "title": "Unsere Produkte",
+    "subtitle": "Entdecken Sie unsere Palette natürlicher Hautpflegeprodukte",
+    "all": "Alle",
+    "available": "Verfügbar",
+    "comingSoon": "Demnächst",
+    "addToCart": "In den Warenkorb",
+    "viewDetails": "Details anzeigen",
+    "outOfStock": "Demnächst",
+    "size": "Größe",
+    "ingredients": "Inhaltsstoffe",
+    "currency": "JOD",
+    "approx": "≈ {amount} {currency}"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "emptyHint": "Durchstöbern Sie unsere Produkte und fügen Sie Ihre Favoriten hinzu",
+    "total": "Gesamtsumme",
+    "subtotal": "Zwischensumme",
+    "checkout": "Zur Kasse",
+    "continueShopping": "Weiter einkaufen",
+    "remove": "Entfernen",
+    "quantity": "Menge"
+  },
+  "checkout": {
+    "title": "Kasse",
+    "contactInfo": "Kontaktinformationen",
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "shippingAddress": "Lieferadresse",
+    "address": "Adresse",
+    "city": "Stadt",
+    "country": "Land",
+    "orderSummary": "Bestellübersicht",
+    "payNow": "Jetzt bezahlen ({amount} JOD)",
+    "processing": "Verarbeitung...",
+    "successTitle": "Zahlung erfolgreich!",
+    "successMessage": "Vielen Dank für Ihre Bestellung. Sie erhalten in Kürze eine Bestätigungs-E-Mail.",
+    "errorTitle": "Zahlung fehlgeschlagen",
+    "errorMessage": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+  },
+  "footer": {
+    "description": "Handgefertigte Naturkosmetikprodukte mit Liebe und Respekt für die Natur hergestellt.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontaktieren Sie uns",
+    "email": "hello@rosellaemulsy.com",
+    "phone": "+962 7 9XXX XXXX",
+    "rights": "© {year} Rosella Emulsy. Alle Rechte vorbehalten.",
+    "madeWith": "Hergestellt mit ❤️ in Jordanien"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "loginTitle": "Admin Login",
+    "password": "Passwort",
+    "login": "Einloggen",
+    "logout": "Ausloggen",
+    "addProduct": "Produkt hinzufügen",
+    "editProduct": "Produkt bearbeiten",
+    "deleteProduct": "Löschen",
+    "save": "Änderungen speichern",
+    "cancel": "Abbrechen",
+    "products": "Produkte",
+    "id": "ID",
+    "name": "Name",
+    "price": "Preis",
+    "status": "Status",
+    "actions": "Aktionen",
+    "successSaved": "Produkt erfolgreich gespeichert",
+    "successDeleted": "Produkt erfolgreich gelöscht",
+    "confirmDelete": "Sind Sie sicher, dass Sie dieses Produkt löschen möchten?",
+    "available": "Verfügbar",
+    "comingSoonStatus": "Demnächst",
+    "newProduct": "Neues Produkt",
+    "languageNote": "Bitte füllen Sie alle Sprachfelder aus"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ja": "日本語",
+    "zh": "中文",
+    "ko": "한국어"
+  }
+}

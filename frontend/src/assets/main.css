@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-lg active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-secondary-amber text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-secondary-amber/90 hover:shadow-lg active:scale-95;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary hover:text-white active:scale-95;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-6 text-center;
+  }
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-10 text-center max-w-2xl mx-auto;
+  }
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors duration-200 font-medium;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200;
+  }
+  .badge-coming-soon {
+    @apply bg-secondary-amber text-white text-xs px-3 py-1 rounded-full font-semibold;
+  }
+  .badge-available {
+    @apply bg-primary-light text-white text-xs px-3 py-1 rounded-full font-semibold;
+  }
+}

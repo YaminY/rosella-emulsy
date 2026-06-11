@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "products": "製品",
+    "about": "当社について",
+    "contact": "お問い合わせ",
+    "cart": "カート ({count})",
+    "admin": "管理"
+  },
+  "home": {
+    "hero": {
+      "title": "自然の恵みをあなたの肌へ",
+      "subtitle": "自然の最高の素材から愛情を込めて作られた、手作りのナチュラルスキンケア製品をご覧ください。",
+      "cta": "今すぐ購入",
+      "learnMore": "もっと詳しく"
+    },
+    "featured": {
+      "title": "おすすめ製品",
+      "subtitle": "厳選された自然の恵みを、あなたのスキンケアのために丁寧に作り上げました。"
+    },
+    "about": {
+      "title": "Rosella Emulsyのこだわり",
+      "description": "私たちは自然の力を信じています。すべての製品は、オーガニックで持続可能な原料を使用し、小ロットで手作りされています。刺激の強い化学物質は一切使用せず、あなたの肌が愛する純粋な植物成分だけを使用しています。",
+      "values": [
+        {
+          "title": "100%天然",
+          "description": "合成化学物質、パラベン、人工香料は不使用"
+        },
+        {
+          "title": "手作り",
+          "description": "細部にまでこだわって丁寧に作られた小ロット製品"
+        },
+        {
+          "title": "持続可能",
+          "description": "環境に優しいパッケージと倫理的に調達された原料"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "最新情報を受け取る",
+      "subtitle": "新製品や限定オファーをいち早くお知らせします。",
+      "placeholder": "メールアドレス",
+      "button": "登録"
+    }
+  },
+  "products": {
+    "title": "製品一覧",
+    "subtitle": "ナチュラルスキンケア製品のラインアップをご覧ください",
+    "all": "すべて",
+    "available": "販売中",
+    "comingSoon": "近日発売",
+    "addToCart": "カートに追加",
+    "viewDetails": "詳細を見る",
+    "outOfStock": "近日発売",
+    "size": "容量",
+    "ingredients": "成分",
+    "currency": "JOD",
+    "approx": "≈ {amount} {currency}"
+  },
+  "cart": {
+    "title": "ショッピングカート",
+    "empty": "カートは空です",
+    "emptyHint": "製品をブラウズして、お気に入りのアイテムを追加してください",
+    "total": "合計",
+    "subtotal": "小計",
+    "checkout": "レジに進む",
+    "continueShopping": "買い物を続ける",
+    "remove": "削除",
+    "quantity": "数量"
+  },
+  "checkout": {
+    "title": "チェックアウト",
+    "contactInfo": "連絡先情報",
+    "fullName": "氏名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "shippingAddress": "配送先住所",
+    "address": "住所",
+    "city": "市区町村",
+    "country": "国",
+    "orderSummary": "注文概要",
+    "payNow": "支払う ({amount} JOD)",
+    "processing": "処理中...",
+    "successTitle": "支払い成功!",
+    "successMessage": "ご注文ありがとうございます。確認メールをお送りします。",
+    "errorTitle": "支払い失敗",
+    "errorMessage": "エラーが発生しました。もう一度お試しください。"
+  },
+  "footer": {
+    "description": "自然への愛情と敬意を込めて作られた手作りのナチュラルスキンケア製品。",
+    "quickLinks": "クイックリンク",
+    "contact": "お問い合わせ",
+    "email": "hello@rosellaemulsy.com",
+    "phone": "+962 7 9XXX XXXX",
+    "rights": "© {year} Rosella Emulsy. All rights reserved.",
+    "madeWith": "ヨルダンで❤️を込めて製造"
+  },
+  "admin": {
+    "title": "管理ダッシュボード",
+    "loginTitle": "管理者ログイン",
+    "password": "パスワード",
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "addProduct": "製品を追加",
+    "editProduct": "製品を編集",
+    "deleteProduct": "削除",
+    "save": "変更を保存",
+    "cancel": "キャンセル",
+    "products": "製品",
+    "id": "ID",
+    "name": "名前",
+    "price": "価格",
+    "status": "ステータス",
+    "actions": "アクション",
+    "successSaved": "製品を保存しました",
+    "successDeleted": "製品を削除しました",
+    "confirmDelete": "この製品を削除してもよろしいですか？",
+    "available": "販売中",
+    "comingSoonStatus": "近日発売",
+    "newProduct": "新製品",
+    "languageNote": "すべての言語フィールドに入力してください"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ja": "日本語",
+    "zh": "中文",
+    "ko": "한국어"
+  }
+}

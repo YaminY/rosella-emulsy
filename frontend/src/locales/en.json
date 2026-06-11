@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart ({count})",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Nature's Touch for Your Skin",
+      "subtitle": "Discover our handcrafted natural skincare products, made with love from nature's finest ingredients.",
+      "cta": "Shop Now",
+      "learnMore": "Learn More"
+    },
+    "featured": {
+      "title": "Featured Products",
+      "subtitle": "Our most beloved natural creations, carefully crafted for your skincare routine."
+    },
+    "about": {
+      "title": "Why Rosella Emulsy?",
+      "description": "We believe in the power of nature. Every product is handmade in small batches using organic and sustainably sourced ingredients. No harsh chemicals, just pure botanicals that your skin will love.",
+      "values": [
+        {
+          "title": "100% Natural",
+          "description": "No synthetic chemicals, parabens, or artificial fragrances"
+        },
+        {
+          "title": "Handcrafted",
+          "description": "Small batches made with care and attention to detail"
+        },
+        {
+          "title": "Sustainable",
+          "description": "Eco-friendly packaging and ethically sourced ingredients"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "Stay in Touch",
+      "subtitle": "Be the first to know about new products and exclusive offers.",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Explore our range of natural skincare products",
+    "all": "All",
+    "available": "Available Now",
+    "comingSoon": "Coming Soon",
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "outOfStock": "Coming Soon",
+    "size": "Size",
+    "ingredients": "Ingredients",
+    "currency": "JOD",
+    "approx": "≈ {amount} {currency}"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "emptyHint": "Browse our products and add items you love",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "remove": "Remove",
+    "quantity": "Qty"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contactInfo": "Contact Information",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "shippingAddress": "Shipping Address",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "orderSummary": "Order Summary",
+    "payNow": "Pay Now ({amount} JOD)",
+    "processing": "Processing...",
+    "successTitle": "Payment Successful!",
+    "successMessage": "Thank you for your order. You will receive a confirmation email shortly.",
+    "errorTitle": "Payment Failed",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "description": "Handcrafted natural skincare products made with love and respect for nature.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "email": "hello@rosellaemulsy.com",
+    "phone": "+962 7 9XXX XXXX",
+    "rights": "© {year} Rosella Emulsy. All rights reserved.",
+    "madeWith": "Made with ❤️ in Jordan"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "loginTitle": "Admin Login",
+    "password": "Password",
+    "login": "Login",
+    "logout": "Logout",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "deleteProduct": "Delete",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "products": "Products",
+    "id": "ID",
+    "name": "Name",
+    "price": "Price",
+    "status": "Status",
+    "actions": "Actions",
+    "successSaved": "Product saved successfully",
+    "successDeleted": "Product deleted successfully",
+    "confirmDelete": "Are you sure you want to delete this product?",
+    "available": "Available",
+    "comingSoonStatus": "Coming Soon",
+    "newProduct": "New Product",
+    "languageNote": "Please fill in all language fields"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ja": "日本語",
+    "zh": "中文",
+    "ko": "한국어"
+  }
+}

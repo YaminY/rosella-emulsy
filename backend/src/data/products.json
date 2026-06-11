@@ -1,0 +1,274 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": {
+        "en": "rose-facial-serum",
+        "ar": "سيروم-الوجه-بالورد",
+        "de": "rosen-gesichtsserum",
+        "fr": "serum-visage-a-la-rose",
+        "ja": "ローズフェイシャルセラム",
+        "zh": "玫瑰面部精华液",
+        "ko": "로즈 페이셜 세럼"
+      },
+      "name": {
+        "en": "Rose Facial Serum",
+        "ar": "سيروم الوجه بالورد",
+        "de": "Rosen-Gesichtsserum",
+        "fr": "Sérum Visage à la Rose",
+        "ja": "ローズフェイシャルセラム",
+        "zh": "玫瑰面部精华液",
+        "ko": "로즈 페이셜 세럼"
+      },
+      "description": {
+        "en": "A luxurious, lightweight facial serum infused with organic rose extract and natural oils. Deeply hydrates and restores your skin's natural glow.",
+        "ar": "سيروم وجه فاخر وخفيف الوزن، غني بمستخلص الورد العضوي والزيوت الطبيعية. يرطب البشرة بعمق ويعيد إشراقتها الطبيعية.",
+        "de": "Ein luxuriöses, leichtes Gesichtsserum mit Bio-Rosenextrakt und natürlichen Ölen. Spendet tiefenwirksame Feuchtigkeit und stellt das natürliche Strahlen Ihrer Haut wieder her.",
+        "fr": "Un sérum visage luxueux et léger, infusé d'extrait de rose biologique et d'huiles naturelles. Hydrate en profondeur et restaure l'éclat naturel de votre peau.",
+        "ja": "オーガニックローズエキスと天然オイルを配合した、贅沢で軽やかなフェイシャルセラム。肌に深く潤いを与え、自然な輝きを取り戻します。",
+        "zh": "一款奢华轻盈的面部精华液，蕴含有机玫瑰提取物和天然油脂。深层补水，恢复肌肤自然光泽。",
+        "ko": "유기농 장미 추출물과 천연 오일이 함유된 고급스럽고 가벼운 페이셜 세럼입니다. 피부에 깊은 수분을 공급하고 자연스러운 광채를 되찾아줍니다."
+      },
+      "price": 14.99,
+      "currency": "JOD",
+      "image": "/images/product-rose-serum.jpg",
+      "category": {
+        "en": "Serums",
+        "ar": "السيرومات",
+        "de": "Seren",
+        "fr": "Sérums",
+        "ja": "セラム",
+        "zh": "精华液",
+        "ko": "세럼"
+      },
+      "size": "30ml",
+      "available": true,
+      "featured": true,
+      "ingredients": {
+        "en": "Organic Rose Extract, Jojoba Oil, Vitamin E, Aloe Vera, Squalane",
+        "ar": "مستخلص الورد العضوي، زيت الجوجوبا، فيتامين هـ، الصبار، سكوالين",
+        "de": "Bio-Rosenextrakt, Jojobaöl, Vitamin E, Aloe Vera, Squalan",
+        "fr": "Extrait de Rose Biologique, Huile de Jojoba, Vitamine E, Aloe Vera, Squalane",
+        "ja": "有機ローズエキス、ホホバオイル、ビタミンE、アロエベラ、スクワラン",
+        "zh": "有机玫瑰提取物、荷荷巴油、维生素E、芦荟、角鲨烷",
+        "ko": "유기농 장미 추출물, 호호바 오일, 비타민 E, 알로에 베라, 스쿠알란"
+      }
+    },
+    {
+      "id": 2,
+      "slug": {
+        "en": "lavender-night-cream",
+        "ar": "كريم-الليل-بالخزامى",
+        "de": "lavendel-nachtcreme",
+        "fr": "creme-de-nuit-a-la-lavande",
+        "ja": "ラベンダーナイトクリーム",
+        "zh": "薰衣草晚霜",
+        "ko": "라벤더 나이트 크림"
+      },
+      "name": {
+        "en": "Lavender Night Cream",
+        "ar": "كريم الليل بالخزامى",
+        "de": "Lavendel-Nachtcreme",
+        "fr": "Crème de Nuit à la Lavande",
+        "ja": "ラベンダーナイトクリーム",
+        "zh": "薰衣草晚霜",
+        "ko": "라벤더 나이트 크림"
+      },
+      "description": {
+        "en": "A rich, nourishing night cream with organic lavender and shea butter. Repairs and rejuvenates your skin while you sleep.",
+        "ar": "كريم ليلي غني ومغذي بالخزامى العضوية وزبدة الشيا. يعيد تجديد بشرتك ويصلحها أثناء النوم.",
+        "de": "Eine reichhaltige, pflegende Nachtcreme mit Bio-Lavendel und Sheabutter. Repariert und verjüngt Ihre Haut, während Sie schlafen.",
+        "fr": "Une crème de nuit riche et nourrissante à la lavande biologique et au beurre de karité. Répare et rajeunit votre peau pendant votre sommeil.",
+        "ja": "オーガニックラベンダーとシアバターを使用した、豊かで栄養のあるナイトクリーム。眠っている間に肌を修復し、若返らせます。",
+        "zh": "富含有机薰衣草和乳木果油的滋养晚霜。在您睡眠时修复和焕活肌肤。",
+        "ko": "유기농 라벤더와 시어 버터가 함유된 풍부하고 영양 가득한 나이트 크림입니다. 잠자는 동안 피부를 복구하고 활력을 되찾아줍니다."
+      },
+      "price": 18.50,
+      "currency": "JOD",
+      "image": "/images/product-lavender-cream.jpg",
+      "category": {
+        "en": "Moisturizers",
+        "ar": "المرطبات",
+        "de": "Feuchtigkeitscremes",
+        "fr": "Hydratants",
+        "ja": "モイスチャライザー",
+        "zh": "保湿霜",
+        "ko": "보습제"
+      },
+      "size": "50ml",
+      "available": true,
+      "featured": true,
+      "ingredients": {
+        "en": "Organic Lavender Extract, Shea Butter, Coconut Oil, Vitamin B5, Chamomile",
+        "ar": "مستخلص الخزامى العضوي، زبدة الشيا، زيت جوز الهند، فيتامين ب5، البابونج",
+        "de": "Bio-Lavendelextrakt, Sheabutter, Kokosöl, Vitamin B5, Kamille",
+        "fr": "Extrait de Lavande Biologique, Beurre de Karité, Huile de Coco, Vitamine B5, Camomille",
+        "ja": "有機ラベンダーエキス、シアバター、ココナッツオイル、ビタミンB5、カモミール",
+        "zh": "有机薰衣草提取物、乳木果油、椰子油、维生素B5、洋甘菊",
+        "ko": "유기농 라벤더 추출물, 시어 버터, 코코넛 오일, 비타민 B5, 카모마일"
+      }
+    },
+    {
+      "id": 3,
+      "slug": {
+        "en": "chamomile-cleansing-oil",
+        "ar": "زيت-التنظيف-بالبابونج",
+        "de": "kamillen-reinigungsöl",
+        "fr": "huile-de-nettoyage-a-la-camomille",
+        "ja": "カモミールクレンジングオイル",
+        "zh": "洋甘菊洁面油",
+        "ko": "카모마일 클렌징 오일"
+      },
+      "name": {
+        "en": "Chamomile Cleansing Oil",
+        "ar": "زيت التنظيف بالبابونج",
+        "de": "Kamillen-Reinigungsöl",
+        "fr": "Huile de Nettoyage à la Camomille",
+        "ja": "カモミールクレンジングオイル",
+        "zh": "洋甘菊洁面油",
+        "ko": "카모마일 클렌징 오일"
+      },
+      "description": {
+        "en": "A gentle, effective cleansing oil with organic chamomile and grapeseed oil. Removes makeup and impurities without stripping your skin.",
+        "ar": "زيت تنظيف لطيف وفعال بالبابونج العضوي وزيت بذور العنب. يزيل المكياج والشوائب دون تجريد بشرتك.",
+        "de": "Ein sanftes, wirksames Reinigungsöl mit Bio-Kamille und Traubenkernöl. Entfernt Make-up und Unreinheiten, ohne die Haut auszutrocknen.",
+        "fr": "Une huile nettoyante douce et efficace à la camomille biologique et à l'huile de pépins de raisin. Élimine le maquillage et les impuretés sans agresser la peau.",
+        "ja": "オーガニックカモミールとグレープシードオイルを使用した、優しく効果的なクレンジングオイル。肌を乾燥させずにメイクや汚れを落とします。",
+        "zh": "一款温和有效的洁面油，含有机洋甘菊和葡萄籽油。卸除彩妆和杂质，同时不剥夺肌肤水分。",
+        "ko": "유기농 카모마일과 포도씨 오일이 함유된 부드럽고 효과적인 클렌징 오일입니다. 피부에 자극 없이 메이크업과 불순물을 제거합니다."
+      },
+      "price": 12.00,
+      "currency": "JOD",
+      "image": "/images/product-chamomile-oil.jpg",
+      "category": {
+        "en": "Cleansers",
+        "ar": "المنظفات",
+        "de": "Reinigungsprodukte",
+        "fr": "Nettoyants",
+        "ja": "クレンザー",
+        "zh": "洁面产品",
+        "ko": "클렌저"
+      },
+      "size": "100ml",
+      "available": false,
+      "featured": false,
+      "ingredients": {
+        "en": "Organic Chamomile Extract, Grapeseed Oil, Vitamin E, Almond Oil, Calendula",
+        "ar": "مستخلص البابونج العضوي، زيت بذور العنب، فيتامين هـ، زيت اللوز، آذريون",
+        "de": "Bio-Kamillenextrakt, Traubenkernöl, Vitamin E, Mandelöl, Ringelblume",
+        "fr": "Extrait de Camomille Biologique, Huile de Pépins de Raisin, Vitamine E, Huile d'Amande, Calendula",
+        "ja": "有機カモミールエキス、グレープシードオイル、ビタミンE、アーモンドオイル、カレンデュラ",
+        "zh": "有机洋甘菊提取物、葡萄籽油、维生素E、杏仁油、金盏花",
+        "ko": "유기농 카모마일 추출물, 포도씨 오일, 비타민 E, 아몬드 오일, 카렌듈라"
+      }
+    },
+    {
+      "id": 4,
+      "slug": {
+        "en": "green-tea-eye-cream",
+        "ar": "كريم-العين-بالشاي-الأخضر",
+        "de": "grüner-tee-augencreme",
+        "fr": "creme-contour-des-yeux-au-the-vert",
+        "ja": "緑茶アイクリーム",
+        "zh": "绿茶眼霜",
+        "ko": "녹차 아이 크림"
+      },
+      "name": {
+        "en": "Green Tea Eye Cream",
+        "ar": "كريم العين بالشاي الأخضر",
+        "de": "Grüner Tee Augencreme",
+        "fr": "Crème Contour des Yeux au Thé Vert",
+        "ja": "緑茶アイクリーム",
+        "zh": "绿茶眼霜",
+        "ko": "녹차 아이 크림"
+      },
+      "description": {
+        "en": "A refreshing eye cream with organic green tea and cucumber extract. Reduces puffiness and dark circles for a brighter look.",
+        "ar": "كريم عين منعش بالشاي الأخضر العضوي ومستخلص الخيار. يقلل الانتفاخ والهالات السوداء لمنحك مظهرًا أكثر إشراقًا.",
+        "de": "Eine erfrischende Augencreme mit Bio-Grüntee und Gurkenextrakt. Reduziert Schwellungen und dunkle Augenringe für einen strahlenderen Blick.",
+        "fr": "Une crème contour des yeux rafraîchissante au thé vert biologique et à l'extrait de concombre. Réduit les poches et les cernes pour un regard plus lumineux.",
+        "ja": "有機緑茶とキュウリエキスを使用したリフレッシュアイクリーム。むくみやくまを軽減し、明るい印象に。",
+        "zh": "一款清爽的眼霜，含有机绿茶和黄瓜提取物。减轻浮肿和黑眼圈，让双眸更明亮。",
+        "ko": "유기농 녹차와 오이 추출물이 함된 상쾌한 아이 크림입니다. 붓기와 다크서클을 완화하여 더 밝은 눈가를 만들어줍니다."
+      },
+      "price": 16.00,
+      "currency": "JOD",
+      "image": "/images/product-green-tea-cream.jpg",
+      "category": {
+        "en": "Eye Care",
+        "ar": "العناية بالعين",
+        "de": "Augenpflege",
+        "fr": "Soin des Yeux",
+        "ja": "アイケア",
+        "zh": "眼部护理",
+        "ko": "아이 케어"
+      },
+      "size": "15ml",
+      "available": false,
+      "featured": false,
+      "ingredients": {
+        "en": "Organic Green Tea Extract, Cucumber Extract, Hyaluronic Acid, Vitamin C, Caffeine",
+        "ar": "مستخلص الشاي الأخضر العضوي، مستخلص الخيار، حمض الهيالورونيك، فيتامين سي، كافيين",
+        "de": "Bio-Grüntee-Extrakt, Gurkenextrakt, Hyaluronsäure, Vitamin C, Koffein",
+        "fr": "Extrait de Thé Vert Biologique, Extrait de Concombre, Acide Hyaluronique, Vitamine C, Caféine",
+        "ja": "有機緑茶エキス、キュウリエキス、ヒアルロン酸、ビタミンC、カフェイン",
+        "zh": "有机绿茶提取物、黄瓜提取物、透明质酸、维生素C、咖啡因",
+        "ko": "유기농 녹차 추출물, 오이 추출물, 히알루론산, 비타민 C, 카페인"
+      }
+    },
+    {
+      "id": 5,
+      "slug": {
+        "en": "pomegranate-body-lotion",
+        "ar": "لوشن-الجسم-بالرمان",
+        "de": "granatapfel-körperlotion",
+        "fr": "lotion-corps-a-la-grenade",
+        "ja": "ザクロボディローション",
+        "zh": "石榴身体乳",
+        "ko": "석류 바디 로션"
+      },
+      "name": {
+        "en": "Pomegranate Body Lotion",
+        "ar": "لوشن الجسم بالرمان",
+        "de": "Granatapfel-Körperlotion",
+        "fr": "Lotion Corps à la Grenade",
+        "ja": "ザクロボディローション",
+        "zh": "石榴身体乳",
+        "ko": "석류 바디 로션"
+      },
+      "description": {
+        "en": "A silky body lotion with organic pomegranate and cocoa butter. Nourishes and softens your skin all day long.",
+        "ar": "لوشن جسم حريري بالرمان العضوي وزبدة الكاكاو. يغذي وينعم بشرتك طوال اليوم.",
+        "de": "Eine seidige Körperlotion mit Bio-Granatapfel und Kakaobutter. Pflegt und macht Ihre Haut den ganzen Tag geschmeidig.",
+        "fr": "Une lotion corporelle soyeuse à la grenade biologique et au beurre de cacao. Nourrit et adoucit votre peau toute la journée.",
+        "ja": "オーガニックザクロとカカオバターを使用したシルキーなボディローション。一日中肌を栄養し、柔らかく保ちます。",
+        "zh": "丝滑身体乳，含有机石榴和可可脂。全天滋养柔软您的肌肤。",
+        "ko": "유기농 석류와 코코아 버터가 함유된 실키한 바디 로션입니다. 하루 종일 피부에 영양을 공급하고 부드럽게 가꾸어줍니다."
+      },
+      "price": 11.50,
+      "currency": "JOD",
+      "image": "/images/product-pomegranate-lotion.jpg",
+      "category": {
+        "en": "Body Care",
+        "ar": "العناية بالجسم",
+        "de": "Körperpflege",
+        "fr": "Soin du Corps",
+        "ja": "ボディケア",
+        "zh": "身体护理",
+        "ko": "바디 케어"
+      },
+      "size": "200ml",
+      "available": false,
+      "featured": false,
+      "ingredients": {
+        "en": "Organic Pomegranate Extract, Cocoa Butter, Almond Oil, Vitamin E, Aloe Vera",
+        "ar": "مستخلص الرمان العضوي، زبدة الكاكاو، زيت اللوز، فيتامين هـ، الصبار",
+        "de": "Bio-Granatapfelextrakt, Kakaobutter, Mandelöl, Vitamin E, Aloe Vera",
+        "fr": "Extrait de Grenade Biologique, Beurre de Cacao, Huile d'Amande, Vitamine E, Aloe Vera",
+        "ja": "有機ザクロエキス、カカオバター、アーモンドオイル、ビタミンE、アロエベラ",
+        "zh": "有机石榴提取物、可可脂、杏仁油、维生素E、芦荟",
+        "ko": "유기농 석류 추출물, 코코아 버터, 아몬드 오일, 비타민 E, 알로에 베라"
+      }
+    }
+  ]
+}
