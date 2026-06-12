@@ -66,28 +66,42 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
 import { useCart } from '@/composables/useCart'
 import { useCurrency } from '@/composables/useCurrency'
-import productsData from '@/data/products.json'
+import { useProducts } from '@/composables/useProducts'
 
 const route = useRoute()
 const { locale } = useI18n()
 const { addToCart } = useCart()
 const { getAllApproximates } = useCurrency()
+const { getProductBySlug } = useProducts()
 
 const currentLocale = computed(() => locale.value)
 
 const product = computed(() => {
   const slug = route.params.slug
-  return productsData.products.find(p =>
-    Object.values(p.slug).includes(slug)
-  )
+  return getProductBySlug(slug)
 })
 
 const approximates = computed(() => {
   if (!product.value) return []
   return getAllApproximates(product.value.price)
+})
+
+// Dynamic SEO meta tags from product data
+const productName = computed(() => product.value?.name?.[locale.value] || product.value?.name?.en || '')
+const productDescription = computed(() => product.value?.description?.[locale.value] || '')
+
+useHead({
+  title: computed(() => productName.value ? `${productName.value} - Rosella Emulsy` : 'Product - Rosella Emulsy'),
+  meta: [
+    { name: 'description', content: computed(() => productDescription.value) },
+    { property: 'og:title', content: computed(() => `${productName.value} - Rosella Emulsy`) },
+    { property: 'og:description', content: computed(() => productDescription.value) },
+    { property: 'og:type', content: 'product' },
+  ],
 })
 
 function handleAddToCart() {

@@ -11,6 +11,8 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  // Longer timeout for Render cold starts (up to 30s)
+  timeout: 30000,
 })
 
 export const productsAPI = {

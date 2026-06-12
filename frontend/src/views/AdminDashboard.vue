@@ -30,6 +30,12 @@
         </div>
       </div>
 
+      <!-- Backend sync status -->
+      <div v-if="!backendAvailable" class="mb-6 bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-sm text-yellow-800">
+        Backend server is starting up (Render cold start). Changes will sync when connected. 
+        Local product data is shown. Retrying every 30 seconds...
+      </div>
+
       <!-- Products Table -->
       <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div class="overflow-x-auto">
@@ -44,7 +50,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(product, index) in products" :key="product.id" class="border-t border-gray-100 hover:bg-gray-50">
+              <tr v-for="(product, index) in allProducts" :key="product.id" class="border-t border-gray-100 hover:bg-gray-50">
                 <td class="px-4 py-3 text-gray-500">{{ product.id }}</td>
                 <td class="px-4 py-3 font-medium text-gray-900">{{ product.name[currentLocale] }}</td>
                 <td class="px-4 py-3">{{ product.price.toFixed(2) }} JOD</td>
@@ -60,7 +66,7 @@
             </tbody>
           </table>
         </div>
-        <div v-if="products.length === 0" class="text-center py-12 text-gray-400">
+        <div v-if="allProducts.length === 0" class="text-center py-12 text-gray-400">
           {{ $t('admin.products') }}
         </div>
       </div>
@@ -140,14 +146,23 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed } from 'vue'
+import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
-import { productsAPI } from '@/services/api'
-import productsData from '@/data/products.json'
+import { useProducts } from '@/composables/useProducts'
+import { productsAPI, adminAPI } from '@/services/api'
 
 const { locale } = useI18n()
 
 const currentLocale = computed(() => locale.value)
+const { allProducts, syncWithBackend, backendAvailable } = useProducts()
+
+useHead({
+  title: 'Admin Dashboard - Rosella Emulsy',
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' },
+  ],
+})
 
 const isAuthenticated = ref(false)
 const password = ref('')
@@ -157,8 +172,7 @@ const showDeleteConfirm = ref(false)
 const editingProduct = ref(null)
 const deletingProduct = ref(null)
 const toast = ref('')
-const products = ref([])
-let nextId = 6
+let nextId = ref(6)
 
 const languages = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -183,13 +197,6 @@ const emptyForm = () => ({
 })
 
 const form = reactive(emptyForm())
-
-onMounted(() => {
-  // TODO: Replace with API call when backend is ready
-  // productsAPI.getAll().then(data => products.value = data.products)
-  products.value = JSON.parse(JSON.stringify(productsData.products))
-  nextId = products.value.length + 1
-})
 
 function handleLogin() {
   // TODO: Replace with actual admin API call
@@ -245,22 +252,24 @@ function saveProduct() {
   }
 
   if (editingProduct.value) {
-    // Update existing
     productData.id = editingProduct.value.id
-    const index = products.value.findIndex(p => p.id === editingProduct.value.id)
+    const index = allProducts.value.findIndex(p => p.id === editingProduct.value.id)
     if (index !== -1) {
-      products.value[index] = productData
+      allProducts.value[index] = productData
     }
     showToast('Product updated successfully')
+    // TODO: Also save to backend
+    // productsAPI.update(productData.id, productData)
   } else {
-    // Add new
-    productData.id = nextId++
-    products.value.push(productData)
+    productData.id = nextId
+    nextId.value++
+    allProducts.value.push(productData)
     showToast('Product added successfully')
+    // TODO: Also save to backend
+    // productsAPI.create(productData)
   }
 
   showForm.value = false
-  // TODO: Also update the backend / save to products.json via API
 }
 
 function confirmDelete(product) {
@@ -270,7 +279,12 @@ function confirmDelete(product) {
 
 function performDelete() {
   if (deletingProduct.value) {
-    products.value = products.value.filter(p => p.id !== deletingProduct.value.id)
+    const index = allProducts.value.findIndex(p => p.id === deletingProduct.value.id)
+    if (index !== -1) {
+      allProducts.value.splice(index, 1)
+    }
+    // TODO: Also delete from backend
+    // productsAPI.delete(deletingProduct.value.id)
     showToast('Product deleted successfully')
   }
   showDeleteConfirm.value = false

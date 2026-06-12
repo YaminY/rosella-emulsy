@@ -55,13 +55,28 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@unhead/vue'
+import { useI18n } from 'vue-i18n'
 import ProductCard from '@/components/ProductCard.vue'
-import productsData from '@/data/products.json'
+import { useProducts } from '@/composables/useProducts'
+
+const { t, locale } = useI18n()
+const { allProducts, comingSoonProducts } = useProducts()
+
+// SEO meta tags
+useHead({
+  title: 'All Products - Rosella Emulsy',
+  meta: [
+    { name: 'description', content: 'Explore our range of natural skincare products. 100% natural, handcrafted in Jordan.' },
+    { property: 'og:title', content: 'Natural Skincare Products - Rosella Emulsy' },
+    { property: 'og:description', content: 'Shop our handcrafted natural skincare collection.' },
+  ],
+})
 
 const filter = ref('all')
 
 const filteredProducts = computed(() => {
-  let list = productsData.products
+  let list = allProducts.value
   if (filter.value === 'available') {
     list = list.filter(p => p.available)
   } else if (filter.value === 'coming-soon') {
@@ -69,8 +84,4 @@ const filteredProducts = computed(() => {
   }
   return list
 })
-
-const comingSoonProducts = computed(() =>
-  productsData.products.filter(p => !p.available)
-)
 </script>

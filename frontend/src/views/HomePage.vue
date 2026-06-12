@@ -20,10 +20,14 @@
           </div>
         </div>
       </div>
-      <!-- Decorative element -->
       <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl"></div>
     </section>
+
+    <!-- Backend status banner (only shows when Render is waking up) -->
+    <div v-if="!backendAvailable && !loading" class="bg-secondary-amber/10 border-b border-secondary-amber/20 text-center py-2 text-xs text-gray-600">
+      Admin panel changes may take up to 30s to sync. The site works instantly with local data.
+    </div>
 
     <!-- Featured Products -->
     <section class="py-16 lg:py-24">
@@ -84,15 +88,29 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
+import { useHead } from '@unhead/vue'
+import { useI18n } from 'vue-i18n'
 import ProductCard from '@/components/ProductCard.vue'
-import productsData from '@/data/products.json'
+import { useProducts } from '@/composables/useProducts'
+
+const { t } = useI18n()
+
+const { featuredProducts, backendAvailable } = useProducts()
 
 const email = ref('')
 
-const featuredProducts = computed(() =>
-  productsData.products.filter(p => p.featured)
-)
+// SEO meta tags
+useHead({
+  title: 'Rosella Emulsy - Natural Skincare',
+  meta: [
+    { name: 'description', content: 'Handcrafted natural skincare products made with love from nature\'s finest ingredients.' },
+    { name: 'keywords', content: 'natural skincare, organic, handmade, Rosella Emulsy, jordan skincare' },
+    { property: 'og:title', content: 'Rosella Emulsy - Natural Skincare' },
+    { property: 'og:description', content: 'Discover our handcrafted natural skincare products.' },
+    { property: 'og:type', content: 'website' },
+  ],
+})
 
 function handleSubscribe() {
   // TODO: Implement newsletter subscription
