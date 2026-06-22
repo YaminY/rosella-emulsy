@@ -5,3 +5,5 @@ dist/
 .DS_Store
 Thumbs.db
 backend/.env
+.vercel
+.env*

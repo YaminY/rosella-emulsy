@@ -14,9 +14,9 @@
             <router-link to="/products" class="btn-primary text-lg px-10 py-4">
               {{ $t('home.hero.cta') }}
             </router-link>
-            <a href="#about" class="btn-outline text-lg px-10 py-4">
+            <router-link to="/about" class="btn-outline text-lg px-10 py-4">
               {{ $t('home.hero.learnMore') }}
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -36,18 +36,6 @@
         <p class="section-subtitle">{{ $t('home.featured.subtitle') }}</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <ProductCard v-for="product in featuredProducts" :key="product.id" :product="product" />
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 lg:py-24 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="section-title">{{ $t('home.about.title') }}</h2>
-        <div class="space-y-6 mt-10">
-          <p v-for="(paragraph, index) in $tm('home.about.story')" :key="index" class="text-lg text-gray-600 leading-relaxed">
-            {{ paragraph }}
-          </p>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <router-link to="/" class="flex items-center gap-3 shrink-0">
-          <img src="/logo-icon.png" alt="Rosella Emulsy" class="h-10 w-10 rounded-full object-cover" />
+          <img src="/logo-icon.png" alt="Rosella Emulsy" class="h-10 w-10 rounded-full object-contain bg-white" />
           <span class="text-xl font-bold text-primary hidden sm:block">Rosella Emulsy</span>
         </router-link>
 
@@ -16,7 +16,9 @@
           <router-link to="/products" class="nav-link" :class="{ 'text-primary font-semibold': $route.name === 'products' }">
             {{ $t('nav.products') }}
           </router-link>
-          <a href="#about" class="nav-link">{{ $t('nav.about') }}</a>
+          <router-link to="/about" class="nav-link" :class="{ 'text-primary font-semibold': $route.name === 'about' }">
+            {{ $t('nav.about') }}
+          </router-link>
         </div>
 
         <!-- Right Actions -->
@@ -63,7 +65,9 @@
             <router-link @click="mobileOpen = false" to="/products" class="px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700" :class="{ 'text-primary font-semibold bg-gray-50': $route.name === 'products' }">
               {{ $t('nav.products') }}
             </router-link>
-            <a @click="mobileOpen = false" href="#about" class="px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700">{{ $t('nav.about') }}</a>
+            <router-link @click="mobileOpen = false" to="/about" class="px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700" :class="{ 'text-primary font-semibold bg-gray-50': $route.name === 'about' }">
+              {{ $t('nav.about') }}
+            </router-link>
           </div>
         </div>
       </Transition>

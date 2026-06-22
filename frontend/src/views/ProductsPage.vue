@@ -41,16 +41,6 @@
       <p class="text-gray-500 text-lg">{{ $t('products.title') }}</p>
     </div>
   </div>
-
-  <!-- Coming Soon Section -->
-  <div v-if="comingSoonProducts.length > 0" class="bg-gradient-to-r from-secondary-amber/10 to-secondary-gold/10 py-16 mt-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="section-title text-secondary-amber">{{ $t('products.comingSoon') }}</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-        <ProductCard v-for="product in comingSoonProducts" :key="product.id" :product="product" />
-      </div>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -61,7 +51,7 @@ import ProductCard from '@/components/ProductCard.vue'
 import { useProducts } from '@/composables/useProducts'
 
 const { t, locale } = useI18n()
-const { allProducts, comingSoonProducts } = useProducts()
+const { allProducts } = useProducts()
 
 // SEO meta tags
 useHead({
