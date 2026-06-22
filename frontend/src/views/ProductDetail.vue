@@ -3,7 +3,13 @@
     <div v-if="product" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Product Image -->
       <div class="aspect-square bg-gradient-to-br from-primary/10 to-primary-light/20 rounded-3xl overflow-hidden">
-        <img v-if="product.image" :src="product.image" :alt="product.name[currentLocale]" class="w-full h-full object-cover" />
+        <img
+          v-if="product.image && !imageError"
+          :src="product.image"
+          :alt="product.name[currentLocale]"
+          class="w-full h-full object-cover"
+          @error="imageError = true"
+        />
         <div v-else class="w-full h-full flex items-center justify-center">
           <div class="text-center p-8">
             <svg class="w-32 h-32 mx-auto text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,10 +42,11 @@
 
         <!-- Price -->
         <div class="mb-8">
-          <span class="text-3xl font-bold text-primary">{{ product.price.toFixed(2) }} {{ $t('products.currency') }}</span>
-          <div class="flex gap-3 mt-2">
-            <span v-for="approx in approximates" :key="approx.currency" class="text-sm text-gray-400">
-              {{ $t('products.approx', { amount: approx.display, currency: approx.currency }) }}
+          <span class="text-3xl font-bold text-primary">{{ primaryPrice.display }}</span>
+          <div class="flex flex-wrap gap-3 mt-2">
+            <span v-if="showBasePrice" class="text-sm text-gray-500">{{ basePrice }}</span>
+            <span v-for="secondaryPrice in secondaryPrices" :key="secondaryPrice.currency" class="text-sm text-gray-400">
+              {{ secondaryPrice.display }}
             </span>
           </div>
         </div>
@@ -67,7 +74,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
@@ -78,19 +85,36 @@ import { useProducts } from '@/composables/useProducts'
 const route = useRoute()
 const { locale } = useI18n()
 const { addToCart } = useCart()
-const { getAllApproximates } = useCurrency()
+const { getPrimaryPrice, getBasePrice, getSecondaryPrices } = useCurrency()
 const { getProductBySlug } = useProducts()
 
 const currentLocale = computed(() => locale.value)
+const imageError = ref(false)
 
 const product = computed(() => {
   const slug = route.params.slug
   return getProductBySlug(slug)
 })
 
-const approximates = computed(() => {
+watch(product, () => {
+  imageError.value = false
+})
+
+const primaryPrice = computed(() => {
+  if (!product.value) return { display: '' }
+  return getPrimaryPrice(product.value.price, locale.value)
+})
+
+const basePrice = computed(() => {
+  if (!product.value) return ''
+  return getBasePrice(product.value.price)
+})
+
+const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
+
+const secondaryPrices = computed(() => {
   if (!product.value) return []
-  return getAllApproximates(product.value.price)
+  return getSecondaryPrices(product.value.price, locale.value)
 })
 
 // Dynamic SEO meta tags from product data

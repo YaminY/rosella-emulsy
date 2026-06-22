@@ -2,8 +2,14 @@
   <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
     <!-- Image -->
     <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary-light/10 relative overflow-hidden">
-      <img :src="product.image" :alt="product.name[currentLocale]" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 flex items-center justify-center" v-if="!product.image || product.image.includes('placeholder')">
+      <img
+        v-if="product.image && !imageError"
+        :src="product.image"
+        :alt="product.name[currentLocale]"
+        class="w-full h-full object-cover"
+        @error="imageError = true"
+      />
+      <div class="absolute inset-0 flex items-center justify-center" v-if="!product.image || imageError">
         <div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary-light/20 flex items-center justify-center">
           <div class="text-center p-4">
             <svg class="w-16 h-16 mx-auto text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,10 +41,11 @@
       <!-- Price and Action -->
       <div class="flex items-center justify-between">
         <div>
-          <span class="text-xl font-bold text-primary">{{ $n(product.price, 'decimal', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }} {{ $t('products.currency') }}</span>
-          <div class="flex gap-2 mt-1">
-            <span v-for="approx in approximates" :key="approx.currency" class="text-xs text-gray-400">
-              {{ approx.display }}
+          <span class="text-xl font-bold text-primary">{{ primaryPrice.display }}</span>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span v-if="showBasePrice" class="text-xs text-gray-500">{{ basePrice }}</span>
+            <span v-for="secondaryPrice in secondaryPrices" :key="secondaryPrice.currency" class="text-xs text-gray-400">
+              {{ secondaryPrice.display }}
             </span>
           </div>
         </div>
@@ -62,7 +69,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useCart } from '@/composables/useCart'
 import { useCurrency } from '@/composables/useCurrency'
@@ -71,13 +78,17 @@ const props = defineProps({
   product: { type: Object, required: true },
 })
 
-const { locale, n } = useI18n()
+const { locale } = useI18n()
 const { addToCart } = useCart()
-const { getAllApproximates } = useCurrency()
+const { getPrimaryPrice, getBasePrice, getSecondaryPrices } = useCurrency()
 
 const currentLocale = computed(() => locale.value)
+const imageError = ref(false)
 
-const approximates = computed(() => getAllApproximates(props.product.price))
+const primaryPrice = computed(() => getPrimaryPrice(props.product.price, locale.value))
+const basePrice = computed(() => getBasePrice(props.product.price))
+const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
+const secondaryPrices = computed(() => getSecondaryPrices(props.product.price, locale.value))
 
 function handleAddToCart() {
   addToCart(props.product)

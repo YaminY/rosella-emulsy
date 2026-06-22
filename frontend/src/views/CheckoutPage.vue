@@ -19,16 +19,23 @@
           <h2 class="text-xl font-bold text-gray-900 mb-6">{{ $t('cart.title') }}</h2>
           <div class="space-y-4">
             <div v-for="item in cartItems" :key="item.id" class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-              <!-- Image placeholder -->
-              <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 to-primary-light/20 flex items-center justify-center shrink-0">
-                <svg class="w-8 h-8 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/10 to-primary-light/20 flex items-center justify-center shrink-0 overflow-hidden">
+                <img
+                  v-if="item.image && !imageErrors[item.id]"
+                  :src="item.image"
+                  :alt="item.name"
+                  class="w-full h-full object-cover"
+                  @error="setImageError(item.id)"
+                />
+                <svg v-else class="w-8 h-8 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
               <div class="flex-1 min-w-0">
                 <h3 class="font-medium text-gray-900 truncate">{{ item.name }}</h3>
                 <p class="text-sm text-gray-500">{{ item.size }}</p>
-                <p class="text-sm font-semibold text-primary">{{ (item.price * item.quantity).toFixed(2) }} {{ $t('products.currency') }}</p>
+                <p class="text-sm font-semibold text-primary">{{ formatPrimaryPrice(item.price * item.quantity) }}</p>
+                <p v-if="showBasePrice" class="text-xs text-gray-500">{{ formatBasePrice(item.price * item.quantity) }}</p>
               </div>
               <div class="flex items-center gap-2">
                 <button @click="updateQuantity(item.id, item.quantity - 1)" class="w-8 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 flex items-center justify-center text-gray-600 transition-colors">
@@ -102,17 +109,18 @@
           <div class="space-y-3 mb-6">
             <div v-for="item in cartItems" :key="item.id" class="flex justify-between text-sm">
               <span class="text-gray-600">{{ item.name }} × {{ item.quantity }}</span>
-              <span class="text-gray-900 font-medium">{{ (item.price * item.quantity).toFixed(2) }} {{ $t('products.currency') }}</span>
+              <span class="text-gray-900 font-medium">{{ formatPrimaryPrice(item.price * item.quantity) }}</span>
             </div>
           </div>
           <div class="border-t border-gray-100 pt-4">
             <div class="flex justify-between items-center">
               <span class="text-lg font-bold text-gray-900">{{ $t('cart.total') }}</span>
-              <span class="text-2xl font-bold text-primary">{{ cartTotal.toFixed(2) }} {{ $t('products.currency') }}</span>
+              <span class="text-2xl font-bold text-primary">{{ formatPrimaryPrice(cartTotal) }}</span>
             </div>
-            <div class="flex gap-3 mt-2 text-xs text-gray-400">
-              <span v-for="approx in approximates" :key="approx.currency">
-                {{ $t('products.approx', { amount: approx.display, currency: approx.currency }) }}
+            <div class="flex flex-wrap gap-3 mt-2 text-xs text-gray-400">
+              <span v-if="showBasePrice" class="text-gray-500">{{ formatBasePrice(cartTotal) }}</span>
+              <span v-for="secondaryPrice in secondaryPrices" :key="secondaryPrice.currency">
+                {{ secondaryPrice.display }}
               </span>
             </div>
           </div>
@@ -154,17 +162,20 @@
 <script setup>
 import { ref, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { useCart } from '@/composables/useCart'
 import { useCurrency } from '@/composables/useCurrency'
 import { paymentAPI } from '@/services/api'
 
 const router = useRouter()
+const { locale } = useI18n()
 const { cartItems, cartTotal, updateQuantity, removeFromCart, clearCart } = useCart()
-const { getAllApproximates } = useCurrency()
+const { getPrimaryPrice, getBasePrice, getSecondaryPrices } = useCurrency()
 
 const processing = ref(false)
 const showResult = ref(false)
 const paymentSuccess = ref(false)
+const imageErrors = ref({})
 
 const form = reactive({
   fullName: '',
@@ -175,7 +186,25 @@ const form = reactive({
   country: '',
 })
 
-const approximates = computed(() => getAllApproximates(cartTotal.value))
+const secondaryPrices = computed(() => getSecondaryPrices(cartTotal.value, locale.value))
+const showBasePrice = computed(() => getPrimaryPrice(cartTotal.value, locale.value).currency !== 'JOD')
+
+function formatPrimaryPrice(amount) {
+  const value = typeof amount === 'number' ? amount : amount.value
+  return getPrimaryPrice(value, locale.value).display
+}
+
+function formatBasePrice(amount) {
+  const value = typeof amount === 'number' ? amount : amount.value
+  return getBasePrice(value)
+}
+
+function setImageError(itemId) {
+  imageErrors.value = {
+    ...imageErrors.value,
+    [itemId]: true,
+  }
+}
 
 async function handlePayment() {
   if (cartItems.value.length === 0) return
