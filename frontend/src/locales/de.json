@@ -19,21 +19,14 @@
       "subtitle": "Unsere beliebtesten Naturkreationen, sorgfältig für Ihre Hautpflegeroutine entwickelt."
     },
     "about": {
-      "title": "Warum Rosella Emulsy?",
-      "description": "Wir glauben an die Kraft der Natur. Jedes Produkt wird in kleinen Chargen handgefertigt mit biologischen und nachhaltig bezogenen Inhaltsstoffen. Keine aggressiven Chemikalien, nur reine Pflanzenstoffe, die Ihre Haut lieben wird.",
-      "values": [
-        {
-          "title": "100% Natürlich",
-          "description": "Keine synthetischen Chemikalien, Parabene oder künstliche Duftstoffe"
-        },
-        {
-          "title": "Handgefertigt",
-          "description": "Kleine Chargen mit Sorgfalt und Liebe zum Detail hergestellt"
-        },
-        {
-          "title": "Nachhaltig",
-          "description": "Umweltfreundliche Verpackung und ethisch bezogene Inhaltsstoffe"
-        }
+      "title": "Über uns",
+      "story": [
+        "Rosella begann als persönliche Erfahrung, bevor sie zu einer Marke wurde.",
+        "Als Apothekerin litt ich unter trockener, empfindlicher Haut und wiederkehrendem Ekzem. Obwohl ich Cold Cream verwendete, spürte ich, dass ich mehr brauchte als nur eine Schutzschicht auf der Hautoberfläche.",
+        "Das brachte mich dazu, selbst zu recherchieren, zu lernen und zu experimentieren. Ich begann mit natürlichen Inhaltsstoffen wie Lanolin, Honig und Kakaobutter und verfeinerte die Rezeptur so lange, bis ich eine Mischung fand, die Feuchtigkeit, Komfort und die gewünschte Textur vereinte.",
+        "Nach vielen Versuchen und Verbesserungen war Rosella Cream geboren.",
+        "Rosella wurde entwickelt, um trockene und empfindliche Haut sanft zu pflegen, mit Fokus auf die Unterstützung der Hautbarriere und angenehme Feuchtigkeitsversorgung – ohne fettiges Gefühl oder zugesetzte Duftstoffe.",
+        "Was als Versuch begann, ein Problem zu lösen, mit dem ich täglich lebte, ist heute ein Produkt, das ich stolz mit jedem teile, der unter Trockenheit und Empfindlichkeit leidet."
       ]
     },
     "newsletter": {

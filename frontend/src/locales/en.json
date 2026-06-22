@@ -19,21 +19,14 @@
       "subtitle": "Our most beloved natural creations, carefully crafted for your skincare routine."
     },
     "about": {
-      "title": "Why Rosella Emulsy?",
-      "description": "We believe in the power of nature. Every product is handmade in small batches using organic and sustainably sourced ingredients. No harsh chemicals, just pure botanicals that your skin will love.",
-      "values": [
-        {
-          "title": "100% Natural",
-          "description": "No synthetic chemicals, parabens, or artificial fragrances"
-        },
-        {
-          "title": "Handcrafted",
-          "description": "Small batches made with care and attention to detail"
-        },
-        {
-          "title": "Sustainable",
-          "description": "Eco-friendly packaging and ethically sourced ingredients"
-        }
+      "title": "About Us",
+      "story": [
+        "Rosella started from a personal experience before becoming a brand.",
+        "As a pharmacist, I struggled with dry, sensitive skin and recurring eczema. Even though I used cold cream, I felt I needed more than just a protective layer on the skin's surface.",
+        "This drove me to research, learn, and experiment on my own. I started with natural ingredients like lanolin, honey, and cocoa butter, then kept refining the formula until I reached a blend that combined hydration, comfort, and the texture I was looking for.",
+        "After many trials and improvements, Rosella Cream was born.",
+        "Rosella was designed to provide gentle care for dry and sensitive skin, focusing on supporting the skin barrier and delivering comfortable hydration without a greasy feel or added fragrances.",
+        "What started as an attempt to solve a problem I lived with every day has now become a product I'm proud to share with everyone who struggles with dryness and sensitivity."
       ]
     },
     "newsletter": {

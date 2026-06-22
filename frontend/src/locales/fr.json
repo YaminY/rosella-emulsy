@@ -19,21 +19,14 @@
       "subtitle": "Nos créations naturelles les plus appréciées, soigneusement conçues pour votre routine de soin."
     },
     "about": {
-      "title": "Pourquoi Rosella Emulsy?",
-      "description": "Nous croyons au pouvoir de la nature. Chaque produit est fabriqué à la main en petites séries avec des ingrédients biologiques et durables. Pas de produits chimiques agressifs, seulement des plantes pures que votre peau adorera.",
-      "values": [
-        {
-          "title": "100% Naturel",
-          "description": "Pas de produits chimiques synthétiques, parabènes ou parfums artificiels"
-        },
-        {
-          "title": "Fabriqué à la main",
-          "description": "Petites séries faites avec soin et attention aux détails"
-        },
-        {
-          "title": "Durable",
-          "description": "Emballages écologiques et ingrédients issus de sources éthiques"
-        }
+      "title": "À propos",
+      "story": [
+        "Rosella est née d'une expérience personnelle avant de devenir une marque.",
+        "En tant que pharmacienne, je souffrais de peau sèche et sensible ainsi que d'eczéma récurrent. Bien que j'utilisais une crème froide, je sentais que j'avais besoin de plus qu'une simple couche protectrice à la surface de la peau.",
+        "Cela m'a poussée à rechercher, apprendre et expérimenter par moi-même. J'ai commencé avec des ingrédients naturels comme la lanoline, le miel et le beurre de cacao, puis j'ai continué à perfectionner la formule jusqu'à obtenir un mélange alliant hydratation, confort et la texture que je recherchais.",
+        "Après de nombreux essais et améliorations, Rosella Cream est née.",
+        "Rosella a été conçue pour offrir des soins doux aux peaux sèches et sensibles, en mettant l'accent sur le soutien de la barrière cutanée et une hydratation confortable sans sensation grasse ni parfums ajoutés.",
+        "Ce qui a commencé comme une tentative de résoudre un problème que je vivais au quotidien est devenu aujourd'hui un produit que je suis fière de partager avec tous ceux qui souffrent de sécheresse et de sensibilité."
       ]
     },
     "newsletter": {
