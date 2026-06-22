@@ -139,7 +139,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/hair-serum.jpeg",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -193,7 +193,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/shampoo-oily-scalp.png",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -247,7 +247,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/hair-silk.png",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",

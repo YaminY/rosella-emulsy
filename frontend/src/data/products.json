@@ -31,7 +31,7 @@
       },
       "price": 15.00,
       "currency": "JOD",
-      "image": "/images/rosella-body-cream.png",
+      "image": "/images/rosella-body-cream.jpeg",
       "category": {
         "en": "Body Care",
         "ar": "العناية بالجسم",
@@ -85,7 +85,7 @@
       },
       "price": 5.00,
       "currency": "JOD",
-      "image": "/images/rosella-lip-balm.jpeg",
+      "image": "/images/rosella-lip-balm.png",
       "category": {
         "en": "Lip Care",
         "ar": "العناية بالشفاه",
@@ -139,7 +139,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/hair-serum.jpeg",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -193,7 +193,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/shampoo-oily-scalp.png",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -247,7 +247,7 @@
       },
       "price": 0,
       "currency": "JOD",
-      "image": "/images/hair-silk.png",
+      "image": "",
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
