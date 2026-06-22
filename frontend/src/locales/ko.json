@@ -10,7 +10,7 @@
   "home": {
     "hero": {
       "title": "순수한 자연. 순수한 당신.",
-      "subtitle": "자연의 최고의 재료로 사랑을 담아 만든 수제 천연 스킨케어 제품을 만나보세요.",
+      "subtitle": "자연의 최고의 재료로 사랑을 담아 만든 천연 스킨케어 제품을 만나보세요.",
       "cta": "지금 쇼핑하기",
       "learnMore": "더 알아보기"
     },
@@ -80,7 +80,7 @@
     "errorMessage": "문제가 발생했습니다. 다시 시도해 주세요."
   },
   "footer": {
-    "description": "자연에 대한 사랑과 존경을 담아 만든 수제 천연 스킨케어 제품.",
+    "description": "자연에 대한 사랑과 존경을 담아 만든 천연 스킨케어 제품.",
     "quickLinks": "바로가기",
     "contact": "문의하기",
     "email": "support{'@'}rosellaemulsy.com",

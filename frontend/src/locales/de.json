@@ -10,7 +10,7 @@
   "home": {
     "hero": {
       "title": "Rein natürlich. Ganz du.",
-      "subtitle": "Entdecken Sie unsere handgefertigten Naturkosmetikprodukte, mit Liebe aus den besten natürlichen Zutaten hergestellt.",
+      "subtitle": "Entdecken Sie unsere Naturkosmetikprodukte, mit Liebe aus den besten natürlichen Zutaten hergestellt.",
       "cta": "Jetzt einkaufen",
       "learnMore": "Mehr erfahren"
     },
@@ -80,7 +80,7 @@
     "errorMessage": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
   },
   "footer": {
-    "description": "Handgefertigte Naturkosmetikprodukte mit Liebe und Respekt für die Natur hergestellt.",
+    "description": "Naturkosmetikprodukte mit Liebe und Respekt für die Natur hergestellt.",
     "quickLinks": "Schnelllinks",
     "contact": "Kontaktieren Sie uns",
     "email": "support{'@'}rosellaemulsy.com",

@@ -57,9 +57,9 @@ const { allProducts } = useProducts()
 useHead({
   title: 'All Products - Rosella Emulsy',
   meta: [
-    { name: 'description', content: 'Explore our range of natural skincare products. 100% natural, handcrafted in Jordan.' },
+    { name: 'description', content: 'Explore our range of natural skincare products. 100% natural, in Jordan.' },
     { property: 'og:title', content: 'Natural Skincare Products - Rosella Emulsy' },
-    { property: 'og:description', content: 'Shop our handcrafted natural skincare collection.' },
+    { property: 'og:description', content: 'Shop our natural skincare collection.' },
   ],
 })
 

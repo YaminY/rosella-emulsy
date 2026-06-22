@@ -10,7 +10,7 @@
   "home": {
     "hero": {
       "title": "100% Naturel. Unique Vous.",
-      "subtitle": "Découvrez nos produits de soin naturels faits main, avec amour à partir des meilleurs ingrédients de la nature.",
+      "subtitle": "Découvrez nos produits de soin naturels, avec amour à partir des meilleurs ingrédients de la nature.",
       "cta": "Acheter maintenant",
       "learnMore": "En savoir plus"
     },
@@ -80,7 +80,7 @@
     "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
   },
   "footer": {
-    "description": "Produits de soin naturels faits main avec amour et respect de la nature.",
+    "description": "Produits de soin naturels avec amour et respect de la nature.",
     "quickLinks": "Liens rapides",
     "contact": "Contactez-nous",
     "email": "support{'@'}rosellaemulsy.com",

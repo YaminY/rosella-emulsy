@@ -10,7 +10,7 @@
   "home": {
     "hero": {
       "title": "Purely Natural. Purely You.",
-      "subtitle": "Discover our handcrafted natural skincare products, made with love from nature's finest ingredients.",
+      "subtitle": "Discover our natural skincare products, made with love from nature's finest ingredients.",
       "cta": "Shop Now",
       "learnMore": "Learn More"
     },
@@ -80,7 +80,7 @@
     "errorMessage": "Something went wrong. Please try again."
   },
   "footer": {
-    "description": "Handcrafted natural skincare products made with love and respect for nature.",
+    "description": "Natural skincare products made with love and respect for nature.",
     "quickLinks": "Quick Links",
     "contact": "Contact Us",
     "email": "support{'@'}rosellaemulsy.com",

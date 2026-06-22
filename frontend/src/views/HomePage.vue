@@ -79,10 +79,10 @@ const email = ref('')
 useHead({
   title: 'Rosella Emulsy - Natural Skincare',
   meta: [
-    { name: 'description', content: 'Handcrafted natural skincare products made with love from nature\'s finest ingredients.' },
+    { name: 'description', content: 'Natural skincare products made with love from nature\'s finest ingredients.' },
     { name: 'keywords', content: 'natural skincare, organic, handmade, Rosella Emulsy, jordan skincare' },
     { property: 'og:title', content: 'Rosella Emulsy - Natural Skincare' },
-    { property: 'og:description', content: 'Discover our handcrafted natural skincare products.' },
+    { property: 'og:description', content: 'Discover our natural skincare products.' },
     { property: 'og:type', content: 'website' },
   ],
 })
