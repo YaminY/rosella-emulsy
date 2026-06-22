@@ -1,8 +1,9 @@
 <template>
   <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
-    <!-- Image placeholder -->
+    <!-- Image -->
     <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary-light/10 relative overflow-hidden">
-      <div class="absolute inset-0 flex items-center justify-center">
+      <img :src="product.image" :alt="product.name[currentLocale]" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 flex items-center justify-center" v-if="!product.image || product.image.includes('placeholder')">
         <div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary-light/20 flex items-center justify-center">
           <div class="text-center p-4">
             <svg class="w-16 h-16 mx-auto text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">

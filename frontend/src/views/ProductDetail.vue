@@ -1,13 +1,16 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
     <div v-if="product" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- Product Image (Placeholder) -->
-      <div class="aspect-square bg-gradient-to-br from-primary/10 to-primary-light/20 rounded-3xl flex items-center justify-center">
-        <div class="text-center p-8">
-          <svg class="w-32 h-32 mx-auto text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p class="text-gray-400 mt-4">{{ product.name[currentLocale] }}</p>
+      <!-- Product Image -->
+      <div class="aspect-square bg-gradient-to-br from-primary/10 to-primary-light/20 rounded-3xl overflow-hidden">
+        <img v-if="product.image" :src="product.image" :alt="product.name[currentLocale]" class="w-full h-full object-cover" />
+        <div v-else class="w-full h-full flex items-center justify-center">
+          <div class="text-center p-8">
+            <svg class="w-32 h-32 mx-auto text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-gray-400 mt-4">{{ product.name[currentLocale] }}</p>
+          </div>
         </div>
       </div>
 
