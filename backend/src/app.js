@@ -21,8 +21,20 @@ const frontendDistPath = join(__dirname, '..', '..', 'frontend', 'dist')
 app.use(express.static(frontendDistPath))
 
 // Middleware
+const allowedOrigins = [
+  process.env.FRONTEND_URL || 'http://localhost:5173',
+  'https://rosellaemulsy.com',
+  'https://www.rosellaemulsy.com',
+]
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3001',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true,
 }))
 app.use(express.json())
