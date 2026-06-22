@@ -5,6 +5,10 @@
   "installCommand": "npm install",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "https://rosellaemulsy.onrender.com"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

@@ -1,10 +1,8 @@
 import axios from 'axios'
 
-// In production (Vercel), API calls go to Render backend
-// In development (localhost), Vite proxy handles it
-const API_BASE = import.meta.env.PROD
-  ? 'https://rosellaemulsy.onrender.com/api'
-  : '/api'
+// Use a relative API path by default so local dev can use the Vite proxy
+// and production can use a platform rewrite without browser-side CORS issues.
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api'
 
 const api = axios.create({
   baseURL: API_BASE,
