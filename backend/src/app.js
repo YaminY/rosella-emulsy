@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import { existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
@@ -18,7 +19,11 @@ const PORT = process.env.PORT || 3001
 
 // Serve built frontend as static files
 const frontendDistPath = join(__dirname, '..', '..', 'frontend', 'dist')
-app.use(express.static(frontendDistPath))
+const hasFrontendDist = existsSync(frontendDistPath)
+
+if (hasFrontendDist) {
+  app.use(express.static(frontendDistPath))
+}
 
 // Middleware
 const allowedOrigins = [
@@ -58,9 +63,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
-// Catch-all: serve index.html for any non-API route (SPA support)
+// When the frontend build is bundled with the backend, serve the SPA.
+// Otherwise return a simple backend status response for the service root.
 app.get('*', (req, res) => {
-  res.sendFile(join(frontendDistPath, 'index.html'))
+  if (hasFrontendDist) {
+    return res.sendFile(join(frontendDistPath, 'index.html'))
+  }
+
+  res.status(404).json({
+    success: false,
+    message: 'API service only',
+  })
 })
 
 // Error handling middleware
