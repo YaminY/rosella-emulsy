@@ -10,7 +10,7 @@
 
 <script setup>
 import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
+import Footer from '@/components/footer.vue'
 import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
