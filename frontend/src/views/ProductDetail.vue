@@ -63,43 +63,71 @@
           {{ $t('products.outOfStock') }}
         </button>
 
-        <!-- Collapsible Details Section -->
-        <div v-if="hasDetails" class="mt-10 pt-8 border-t border-gray-200">
-          <button
-            @click="expanded = !expanded"
-            class="flex items-center justify-between w-full text-left"
-          >
-            <span class="text-base font-semibold text-gray-800">{{ expanded ? $t('products.showLess') : $t('products.showMore') }}</span>
-            <svg
-              class="w-5 h-5 text-gray-500 transition-transform duration-200"
-              :class="{ 'rotate-180': expanded }"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+        <!-- Individual Collapsible Cards -->
+        <div class="mt-10 pt-8 border-t border-gray-200 space-y-4">
 
-          <div
-            v-if="expanded"
-            class="mt-6 space-y-8"
-          >
-            <!-- Long Description -->
-            <div v-if="product.longDescription?.[currentLocale]">
-              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.description') }}</h4>
+          <!-- Description Card -->
+          <div v-if="product.longDescription?.[currentLocale]" class="border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              @click="toggleSection('desc')"
+              class="flex items-center justify-between w-full px-5 py-4 text-left text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-colors duration-200"
+            >
+              <span>{{ $t('products.description') }}</span>
+              <svg
+                class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                :class="{ 'rotate-180': openSections.desc }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div v-if="openSections.desc" class="px-5 pb-4">
               <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ product.longDescription[currentLocale] }}</p>
             </div>
+          </div>
 
-            <!-- How to Use -->
-            <div v-if="product.howToUse?.[currentLocale]">
-              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.howToUse') }}</h4>
+          <!-- How to Use Card -->
+          <div v-if="product.howToUse?.[currentLocale]" class="border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              @click="toggleSection('howToUse')"
+              class="flex items-center justify-between w-full px-5 py-4 text-left text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-colors duration-200"
+            >
+              <span>{{ $t('products.howToUse') }}</span>
+              <svg
+                class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                :class="{ 'rotate-180': openSections.howToUse }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div v-if="openSections.howToUse" class="px-5 pb-4">
               <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ product.howToUse[currentLocale] }}</p>
             </div>
+          </div>
 
-            <!-- Key Ingredients -->
-            <div v-if="product.keyIngredients?.length">
-              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.keyIngredients') }}</h4>
+          <!-- Key Ingredients Card -->
+          <div v-if="product.keyIngredients?.length" class="border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              @click="toggleSection('ingredients')"
+              class="flex items-center justify-between w-full px-5 py-4 text-left text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-colors duration-200"
+            >
+              <span>{{ $t('products.keyIngredients') }}</span>
+              <svg
+                class="w-5 h-5 text-gray-400 transition-transform duration-200"
+                :class="{ 'rotate-180': openSections.ingredients }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div v-if="openSections.ingredients" class="px-5 pb-4">
               <ul class="space-y-3">
                 <li
                   v-for="(item, index) in product.keyIngredients"
@@ -112,6 +140,7 @@
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -125,7 +154,7 @@
 </template>
 
 <script setup>
-import { computed, ref, watch } from 'vue'
+import { computed, ref, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
@@ -141,7 +170,16 @@ const { getProductBySlug } = useProducts()
 
 const currentLocale = computed(() => locale.value)
 const imageError = ref(false)
-const expanded = ref(false)
+
+const openSections = reactive({
+  desc: false,
+  howToUse: false,
+  ingredients: false,
+})
+
+function toggleSection(section) {
+  openSections[section] = !openSections[section]
+}
 
 const product = computed(() => {
   const slug = route.params.slug
@@ -150,7 +188,9 @@ const product = computed(() => {
 
 watch(product, () => {
   imageError.value = false
-  expanded.value = false
+  openSections.desc = false
+  openSections.howToUse = false
+  openSections.ingredients = false
 })
 
 const primaryPrice = computed(() => {
@@ -168,15 +208,6 @@ const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
 const secondaryPrices = computed(() => {
   if (!product.value) return []
   return getSecondaryPrices(product.value.price, locale.value)
-})
-
-const hasDetails = computed(() => {
-  if (!product.value) return false
-  return !!(
-    product.value.longDescription?.[locale.value] ||
-    product.value.howToUse?.[locale.value] ||
-    product.value.keyIngredients?.length
-  )
 })
 
 // Dynamic SEO meta tags from product data

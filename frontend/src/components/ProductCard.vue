@@ -65,43 +65,71 @@
         </button>
       </div>
 
-      <!-- Collapsible Details Section -->
-      <div v-if="hasDetails" class="mt-5 pt-4 border-t border-gray-100">
-        <button
-          @click="expanded = !expanded"
-          class="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200"
-        >
-          <span>{{ expanded ? $t('products.showLess') : $t('products.showMore') }}</span>
-          <svg
-            class="w-4 h-4 transition-transform duration-200"
-            :class="{ 'rotate-180': expanded }"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
+      <!-- Individual Collapsible Sections -->
+      <div class="mt-5 pt-4 border-t border-gray-100 space-y-3">
 
-        <div
-          v-if="expanded"
-          class="mt-4 space-y-4 overflow-hidden transition-all duration-300"
-        >
-          <!-- Long Description -->
-          <div v-if="product.longDescription?.[currentLocale]">
-            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.description') }}</h4>
+        <!-- Description Card -->
+        <div v-if="product.longDescription?.[currentLocale]" class="border border-gray-100 rounded-xl overflow-hidden">
+          <button
+            @click="toggleSection('desc')"
+            class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+          >
+            <span>{{ $t('products.description') }}</span>
+            <svg
+              class="w-4 h-4 text-gray-400 transition-transform duration-200"
+              :class="{ 'rotate-180': openSections.desc }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div v-if="openSections.desc" class="px-4 pb-3">
             <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{{ product.longDescription[currentLocale] }}</p>
           </div>
+        </div>
 
-          <!-- How to Use -->
-          <div v-if="product.howToUse?.[currentLocale]">
-            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.howToUse') }}</h4>
+        <!-- How to Use Card -->
+        <div v-if="product.howToUse?.[currentLocale]" class="border border-gray-100 rounded-xl overflow-hidden">
+          <button
+            @click="toggleSection('howToUse')"
+            class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+          >
+            <span>{{ $t('products.howToUse') }}</span>
+            <svg
+              class="w-4 h-4 text-gray-400 transition-transform duration-200"
+              :class="{ 'rotate-180': openSections.howToUse }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div v-if="openSections.howToUse" class="px-4 pb-3">
             <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{{ product.howToUse[currentLocale] }}</p>
           </div>
+        </div>
 
-          <!-- Key Ingredients -->
-          <div v-if="product.keyIngredients?.length">
-            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.keyIngredients') }}</h4>
+        <!-- Key Ingredients Card -->
+        <div v-if="product.keyIngredients?.length" class="border border-gray-100 rounded-xl overflow-hidden">
+          <button
+            @click="toggleSection('ingredients')"
+            class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+          >
+            <span>{{ $t('products.keyIngredients') }}</span>
+            <svg
+              class="w-4 h-4 text-gray-400 transition-transform duration-200"
+              :class="{ 'rotate-180': openSections.ingredients }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div v-if="openSections.ingredients" class="px-4 pb-3">
             <ul class="space-y-2">
               <li
                 v-for="(item, index) in product.keyIngredients"
@@ -114,13 +142,14 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useCart } from '@/composables/useCart'
 import { useCurrency } from '@/composables/useCurrency'
@@ -135,20 +164,21 @@ const { getPrimaryPrice, getBasePrice, getSecondaryPrices } = useCurrency()
 
 const currentLocale = computed(() => locale.value)
 const imageError = ref(false)
-const expanded = ref(false)
+
+const openSections = reactive({
+  desc: false,
+  howToUse: false,
+  ingredients: false,
+})
+
+function toggleSection(section) {
+  openSections[section] = !openSections[section]
+}
 
 const primaryPrice = computed(() => getPrimaryPrice(props.product.price, locale.value))
 const basePrice = computed(() => getBasePrice(props.product.price))
 const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
 const secondaryPrices = computed(() => getSecondaryPrices(props.product.price, locale.value))
-
-const hasDetails = computed(() => {
-  return !!(
-    props.product.longDescription?.[locale.value] ||
-    props.product.howToUse?.[locale.value] ||
-    props.product.keyIngredients?.length
-  )
-})
 
 function handleAddToCart() {
   addToCart(props.product)
