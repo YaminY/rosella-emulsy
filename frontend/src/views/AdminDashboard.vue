@@ -112,6 +112,35 @@
                 <input v-model="form.ingredients[lang.code]" :placeholder="`Ingredients (${lang.label})`" class="input-field" required />
               </div>
 
+              <!-- Image -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Image Path</label>
+                <input v-model="form.image" class="input-field" placeholder="/images/product.jpg" />
+              </div>
+
+              <!-- Long Description & How To Use -->
+              <div v-for="lang in languages" :key="'rich-' + lang.code" class="border border-primary/10 rounded-xl p-4 space-y-3">
+                <h3 class="font-semibold text-sm text-primary/80">{{ lang.flag }} {{ lang.label }} — Rich Content</h3>
+                <textarea v-model="form.longDescription[lang.code]" :placeholder="`Long Description (${lang.label})`" class="input-field min-h-[80px]"></textarea>
+                <textarea v-model="form.howToUse[lang.code]" :placeholder="`How to Use (${lang.label})`" class="input-field min-h-[80px]"></textarea>
+              </div>
+
+              <!-- Key Ingredients -->
+              <div class="border border-gray-200 rounded-xl p-4">
+                <h3 class="font-semibold text-sm text-gray-700 mb-3">Key Ingredients</h3>
+                <div v-for="(ingredient, idx) in form.keyIngredients" :key="idx" class="border-t border-gray-100 pt-3 mt-3 first:border-t-0 first:pt-0 first:mt-0">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-medium text-gray-500">Ingredient #{{ idx + 1 }}</span>
+                    <button type="button" @click="removeIngredient(idx)" class="text-red-400 hover:text-red-600 text-xs">Remove</button>
+                  </div>
+                  <div v-for="lang in languages" :key="'ing-name-' + lang.code + '-' + idx" class="grid grid-cols-2 gap-2 mb-1">
+                    <input v-model="ingredient.name[lang.code]" :placeholder="`Name (${lang.label})`" class="input-field text-xs" />
+                    <textarea v-model="ingredient.benefit[lang.code]" :placeholder="`Benefit (${lang.label})`" class="input-field text-xs min-h-[40px]"></textarea>
+                  </div>
+                </div>
+                <button type="button" @click="addIngredient" class="mt-3 text-sm text-primary hover:text-primary/70 transition-colors">+ Add ingredient</button>
+              </div>
+
               <div class="flex gap-3 pt-4">
                 <button type="submit" class="btn-primary flex-1 py-3">{{ $t('admin.save') }}</button>
                 <button type="button" @click="cancelForm" class="btn-outline flex-1 py-3">{{ $t('admin.cancel') }}</button>
@@ -189,11 +218,15 @@ const emptyForm = () => ({
   size: '30ml',
   available: true,
   featured: false,
+  image: '',
   name: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   description: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   slug: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   category: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   ingredients: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
+  longDescription: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
+  howToUse: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
+  keyIngredients: [],
 })
 
 const form = reactive(emptyForm())
@@ -227,11 +260,24 @@ function startEditProduct(product) {
     size: product.size,
     available: product.available,
     featured: product.featured,
+    image: product.image || '',
     name: { ...product.name },
     description: { ...product.description },
     slug: { ...product.slug },
     category: { ...product.category },
     ingredients: { ...product.ingredients },
+    longDescription: product.longDescription
+      ? { ...product.longDescription }
+      : { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
+    howToUse: product.howToUse
+      ? { ...product.howToUse }
+      : { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
+    keyIngredients: product.keyIngredients
+      ? product.keyIngredients.map(ing => ({
+          name: { ...ing.name },
+          benefit: { ...ing.benefit },
+        }))
+      : [],
   })
   showForm.value = true
 }
@@ -243,11 +289,17 @@ function saveProduct() {
     slug: { ...form.slug },
     category: { ...form.category },
     ingredients: { ...form.ingredients },
+    longDescription: { ...form.longDescription },
+    howToUse: { ...form.howToUse },
+    keyIngredients: form.keyIngredients.map(ing => ({
+      name: { ...ing.name },
+      benefit: { ...ing.benefit },
+    })),
     price: parseFloat(form.price),
     size: form.size,
     available: form.available,
     featured: form.featured,
-    image: editingProduct.value ? editingProduct.value.image : '/images/placeholder.jpg',
+    image: form.image || '/images/placeholder.jpg',
     currency: 'JOD',
   }
 
@@ -289,6 +341,18 @@ function performDelete() {
   }
   showDeleteConfirm.value = false
   deletingProduct.value = null
+}
+
+function addIngredient() {
+  const emptyLocale = () => ({ en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' })
+  form.keyIngredients.push({
+    name: emptyLocale(),
+    benefit: emptyLocale(),
+  })
+}
+
+function removeIngredient(idx) {
+  form.keyIngredients.splice(idx, 1)
 }
 
 function cancelForm() {
