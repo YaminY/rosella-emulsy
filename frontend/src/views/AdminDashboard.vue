@@ -247,7 +247,7 @@ function saveProduct() {
     size: form.size,
     available: form.available,
     featured: form.featured,
-    image: '/images/placeholder.jpg',
+    image: editingProduct.value ? editingProduct.value.image : '/images/placeholder.jpg',
     currency: 'JOD',
   }
 
