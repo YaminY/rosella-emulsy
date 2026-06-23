@@ -1,13 +1,18 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary/5 via-white to-primary-light/5 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/images/hero.png')"
+      ></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white/55 via-white/35 to-white/60"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight drop-shadow-[0_1px_0_rgba(255,255,255,0.5)]">
             {{ $t('home.hero.title') }}
           </h1>
-          <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+          <p class="text-lg md:text-xl text-gray-700 mb-10 leading-relaxed max-w-2xl mx-auto">
             {{ $t('home.hero.subtitle') }}
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -20,8 +25,6 @@
           </div>
         </div>
       </div>
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl"></div>
     </section>
 
     <!-- Backend status banner (only shows when Render is waking up) -->
