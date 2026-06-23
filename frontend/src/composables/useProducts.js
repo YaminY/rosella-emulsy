@@ -1,4 +1,4 @@
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { productsAPI } from '@/services/api'
 import localProducts from '@/data/products.json'
@@ -9,13 +9,34 @@ const loading = ref(false)
 const backendAvailable = ref(false)
 const error = ref(null)
 
+// Merge backend product into local product to preserve rich fields (longDescription, howToUse, keyIngredients)
+function mergeProduct(backendProduct) {
+  const localProduct = localProducts.products.find(p => p.id === backendProduct.id)
+  if (!localProduct) return backendProduct // no local match, use backend as-is
+  return {
+    ...backendProduct,
+    // Preserve rich content fields from local data that backend may not have
+    longDescription: localProduct.longDescription,
+    howToUse: localProduct.howToUse,
+    keyIngredients: localProduct.keyIngredients,
+    // Also ensure the description text is the richer local version
+    description: localProduct.description,
+    // Keep the full ingredients list from local data
+    ingredients: localProduct.ingredients,
+    // Keep local locale fields that backend may truncate
+    name: localProduct.name,
+    category: localProduct.category,
+  }
+}
+
 // Try to sync with the backend API, fall back to local data
 async function syncWithBackend() {
   loading.value = true
   try {
     const response = await productsAPI.getAll()
     if (response?.products?.length > 0) {
-      products.value = response.products
+      // Merge each backend product with local rich data
+      products.value = response.products.map(mergeProduct)
       backendAvailable.value = true
     }
   } catch (err) {
