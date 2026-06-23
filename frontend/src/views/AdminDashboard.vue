@@ -111,38 +111,33 @@
 
               <p class="text-xs text-gray-500 bg-yellow-50 p-3 rounded-lg">{{ $t('admin.languageNote') }}</p>
 
-              <!-- ===== SECTION 2: Language Content ===== -->
+              <!-- ===== SECTION 2: Per-Language Content ===== -->
               <div v-for="lang in languages" :key="lang.code" class="border border-gray-200 rounded-xl overflow-hidden">
                 <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
                   <h3 class="font-semibold text-sm text-gray-800">{{ lang.flag }} {{ lang.label }}</h3>
                 </div>
                 <div class="p-4 space-y-3">
                   <input v-model="form.name[lang.code]" :placeholder="`Product Name (${lang.label})`" class="input-field" required />
-                  <input v-model="form.slug[lang.code]" :placeholder="`slug-${lang.code}`" class="input-field text-xs" required />
-                  <textarea v-model="form.description[lang.code]" :placeholder="`Short Description (${lang.label})`" class="input-field min-h-[60px]" required></textarea>
-                  <textarea v-model="form.longDescription[lang.code]" :placeholder="`Long Description / Details (${lang.label})`" class="input-field min-h-[80px]"></textarea>
-                  <textarea v-model="form.howToUse[lang.code]" :placeholder="`How to Use (${lang.label})`" class="input-field min-h-[60px]"></textarea>
-                  <input v-model="form.category[lang.code]" :placeholder="`Category (${lang.label})`" class="input-field" required />
-                  <input v-model="form.ingredients[lang.code]" :placeholder="`Ingredients List (${lang.label})`" class="input-field" required />
-                </div>
-              </div>
+                  <input v-model="form.slug[lang.code]" :placeholder="`URL slug (${lang.code}) — e.g. rosella-body-cream`" class="input-field text-xs" required />
+                  <textarea v-model="form.description[lang.code]" :placeholder="`Short description — shown on product cards (${lang.label})`" class="input-field min-h-[60px]" required></textarea>
+                  <textarea v-model="form.longDescription[lang.code]" :placeholder="`Long description — shown in expandable section on product page (${lang.label})`" class="input-field min-h-[80px]"></textarea>
+                  <textarea v-model="form.howToUse[lang.code]" :placeholder="`How to use — shown in expandable section (${lang.label})`" class="input-field min-h-[60px]"></textarea>
+                  <input v-model="form.category[lang.code]" :placeholder="`Category (${lang.label}) — e.g. Body Care`" class="input-field" required />
+                  <input v-model="form.ingredients[lang.code]" :placeholder="`Full ingredients list (${lang.label})`" class="input-field" required />
 
-              <!-- ===== SECTION 3: Key Ingredients ===== -->
-              <div class="border border-gray-200 rounded-xl overflow-hidden">
-                <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center justify-between">
-                  <h3 class="font-semibold text-sm text-gray-800">🧪 Key Ingredients</h3>
-                  <button type="button" @click="addIngredient" class="text-xs text-primary hover:text-primary/70 font-medium">+ Add ingredient</button>
-                </div>
-                <div class="p-4">
-                  <div v-if="form.keyIngredients.length === 0" class="text-center py-4 text-gray-400 text-sm">No key ingredients added yet. Click "+ Add ingredient" above.</div>
-                  <div v-for="(ingredient, idx) in form.keyIngredients" :key="idx" class="mb-4 pb-4 border-b border-gray-100 last:border-b-0 last:mb-0 last:pb-0">
+                  <!-- Key Ingredients for this language -->
+                  <div class="border-t border-gray-100 pt-3 mt-2">
                     <div class="flex items-center justify-between mb-2">
-                      <span class="text-xs font-medium text-gray-500">Ingredient #{{ idx + 1 }}</span>
-                      <button type="button" @click="removeIngredient(idx)" class="text-red-400 hover:text-red-600 text-xs font-medium">Remove</button>
+                      <span class="text-xs font-medium text-gray-500">Key Ingredients ({{ lang.label }})</span>
+                      <button type="button" @click="addIngredient" class="text-xs text-primary hover:text-primary/70 font-medium">+ Add</button>
                     </div>
-                    <div v-for="lang in languages" :key="'ing-' + lang.code + '-' + idx" class="grid grid-cols-2 gap-2 mb-1.5">
-                      <input v-model="ingredient.name[lang.code]" :placeholder="`${lang.label} — Name`" class="input-field text-xs" />
-                      <textarea v-model="ingredient.benefit[lang.code]" :placeholder="`${lang.label} — Benefit`" class="input-field text-xs min-h-[36px]"></textarea>
+                    <div v-if="form.keyIngredients.length === 0" class="text-xs text-gray-400 italic">No key ingredients defined. Click "+ Add" above to add one.</div>
+                    <div v-for="(ing, idx) in form.keyIngredients" :key="idx" class="flex items-start gap-2 mb-1.5 pb-1.5 border-b border-gray-50 last:border-b-0">
+                      <div class="flex-1 grid grid-cols-1 gap-1">
+                        <input :value="ing.name[lang.code]" @input="ing.name[lang.code] = $event.target.value" :placeholder="`Ingredient name (${lang.label})`" class="input-field text-xs" />
+                        <textarea :value="ing.benefit[lang.code]" @input="ing.benefit[lang.code] = $event.target.value" :placeholder="`Benefit (${lang.label})`" class="input-field text-xs min-h-[36px]"></textarea>
+                      </div>
+                      <button type="button" @click="removeIngredient(idx)" class="text-red-400 hover:text-red-600 text-xs mt-1">✕</button>
                     </div>
                   </div>
                 </div>
