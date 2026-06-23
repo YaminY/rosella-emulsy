@@ -47,6 +47,11 @@
     "outOfStock": "即将推出",
     "size": "规格",
     "ingredients": "成分",
+    "description": "说明",
+    "howToUse": "使用方法",
+    "keyIngredients": "主要成分",
+    "showMore": "展开更多",
+    "showLess": "收起",
     "currency": "JOD",
     "approx": "≈ {amount} {currency}"
   },
@@ -54,11 +59,11 @@
     "title": "购物车",
     "empty": "您的购物车是空的",
     "emptyHint": "浏览我们的产品并添加您喜欢的商品",
-    "total": "总计",
+    "total": "合计",
     "subtotal": "小计",
-    "checkout": "去结算",
+    "checkout": "前往结算",
     "continueShopping": "继续购物",
-    "remove": "删除",
+    "remove": "移除",
     "quantity": "数量"
   },
   "checkout": {
@@ -77,19 +82,19 @@
     "successTitle": "支付成功！",
     "successMessage": "感谢您的订单。您将很快收到确认邮件。",
     "errorTitle": "支付失败",
-    "errorMessage": "出了点问题。请重试。"
+    "errorMessage": "出错了，请重试。"
   },
   "footer": {
-    "description": "天然护肤品，以爱心和尊重大自然的态度精心打造。",
+    "description": "天然护肤品，以爱和尊重自然之心制成。",
     "quickLinks": "快速链接",
     "contact": "联系我们",
     "email": "support{'@'}rosellaemulsy.com",
     "phone": "+962 795038231",
     "rights": "© {year} Rosella Emulsy. 保留所有权利。",
-    "madeWith": "用 ❤️ 在约旦制作"
+    "madeWith": "在约旦以❤️精心制造"
   },
   "admin": {
-    "title": "管理面板",
+    "title": "管理后台",
     "loginTitle": "管理员登录",
     "password": "密码",
     "login": "登录",
@@ -107,8 +112,8 @@
     "actions": "操作",
     "successSaved": "产品保存成功",
     "successDeleted": "产品删除成功",
-    "confirmDelete": "您确定要删除此产品吗？",
-    "available": "现货",
+    "confirmDelete": "确定要删除此产品吗？",
+    "available": "有货",
     "comingSoonStatus": "即将推出",
     "newProduct": "新产品",
     "languageNote": "请填写所有语言字段"

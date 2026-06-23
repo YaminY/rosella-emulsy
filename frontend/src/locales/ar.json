@@ -47,6 +47,11 @@
     "outOfStock": "قريبًا",
     "size": "الحجم",
     "ingredients": "المكونات",
+    "description": "الوصف",
+    "howToUse": "طريقة الاستخدام",
+    "keyIngredients": "المكونات الرئيسية",
+    "showMore": "عرض المزيد",
+    "showLess": "عرض أقل",
     "currency": "د.أ",
     "approx": "≈ {amount} {currency}"
   },

@@ -64,6 +64,57 @@
           {{ $t('products.outOfStock') }}
         </button>
       </div>
+
+      <!-- Collapsible Details Section -->
+      <div v-if="hasDetails" class="mt-5 pt-4 border-t border-gray-100">
+        <button
+          @click="expanded = !expanded"
+          class="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200"
+        >
+          <span>{{ expanded ? $t('products.showLess') : $t('products.showMore') }}</span>
+          <svg
+            class="w-4 h-4 transition-transform duration-200"
+            :class="{ 'rotate-180': expanded }"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div
+          v-if="expanded"
+          class="mt-4 space-y-4 overflow-hidden transition-all duration-300"
+        >
+          <!-- Long Description -->
+          <div v-if="product.longDescription?.[currentLocale]">
+            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.description') }}</h4>
+            <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{{ product.longDescription[currentLocale] }}</p>
+          </div>
+
+          <!-- How to Use -->
+          <div v-if="product.howToUse?.[currentLocale]">
+            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.howToUse') }}</h4>
+            <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{{ product.howToUse[currentLocale] }}</p>
+          </div>
+
+          <!-- Key Ingredients -->
+          <div v-if="product.keyIngredients?.length">
+            <h4 class="text-xs font-semibold text-gray-800 uppercase tracking-wider mb-2">{{ $t('products.keyIngredients') }}</h4>
+            <ul class="space-y-2">
+              <li
+                v-for="(item, index) in product.keyIngredients"
+                :key="index"
+                class="text-sm"
+              >
+                <span class="font-medium text-gray-800">{{ item.name[currentLocale] }}</span>
+                <span class="text-gray-500"> — {{ item.benefit[currentLocale] }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -84,11 +135,20 @@ const { getPrimaryPrice, getBasePrice, getSecondaryPrices } = useCurrency()
 
 const currentLocale = computed(() => locale.value)
 const imageError = ref(false)
+const expanded = ref(false)
 
 const primaryPrice = computed(() => getPrimaryPrice(props.product.price, locale.value))
 const basePrice = computed(() => getBasePrice(props.product.price))
 const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
 const secondaryPrices = computed(() => getSecondaryPrices(props.product.price, locale.value))
+
+const hasDetails = computed(() => {
+  return !!(
+    props.product.longDescription?.[locale.value] ||
+    props.product.howToUse?.[locale.value] ||
+    props.product.keyIngredients?.length
+  )
+})
 
 function handleAddToCart() {
   addToCart(props.product)

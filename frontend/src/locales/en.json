@@ -47,6 +47,11 @@
     "outOfStock": "Coming Soon",
     "size": "Size",
     "ingredients": "Ingredients",
+    "description": "Description",
+    "howToUse": "How to Use",
+    "keyIngredients": "Key Ingredients",
+    "showMore": "Show More",
+    "showLess": "Show Less",
     "currency": "JOD",
     "approx": "≈ {amount} {currency}"
   },

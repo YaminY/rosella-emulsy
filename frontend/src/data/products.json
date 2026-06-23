@@ -21,17 +21,69 @@
         "ko": "로셀라 바디 크림"
       },
       "description": {
-        "en": "Gentle care for dry and sensitive skin, developed with pharmaceutical expertise and carefully selected ingredients to help support the skin barrier and maintain hydration.\n\n✔ Comfortable hydration without greasy feel\n✔ Suitable for dry and sensitive skin\n✔ Free from added fragrances\n✔ Supports the natural skin barrier\n\nA blend of lanolin, honey, cocoa butter and natural oils to help support the skin's protective barrier and maintain moisture.",
-        "ar": "عناية لطيفة للبشرة الجافة والحساسة، طُورت بخبرة صيدلانية ومكونات مختارة بعناية للمساعدة على دعم حاجز البشرة والحفاظ على ترطيبها.\n\n✔ ترطيب مريح دون ملمس دهني\n✔ مناسب للبشرة الجافة والحساسة\n✔ خالٍ من العطور المضافة\n✔ يدعم حاجز البشرة الطبيعية\n\nمزيج من اللانولين والعسل وزبدة الكاكاو والزيوت الطبيعية للمساعدة على دعم الحاجز الواقي للبشرة والحفاظ على ترطيبها.",
-        "de": "Sanfte Pflege für trockene und empfindliche Haut, entwickelt mit pharmazeutischem Fachwissen und sorgfältig ausgewählten Inhaltsstoffen, um die Hautbarriere zu unterstützen und die Feuchtigkeit zu bewahren.\n\n✔ Angenehme Feuchtigkeitsversorgung ohne fettiges Gefühl\n✔ Geeignet für trockene und empfindliche Haut\n✔ Ohne zugesetzte Duftstoffe\n✔ Unterstützt die natürliche Hautbarriere\n\nEine Mischung aus Lanolin, Honig, Kakaobutter und natürlichen Ölen zur Unterstützung der Schutzbarriere der Haut und zum Erhalt der Feuchtigkeit.",
-        "fr": "Soin doux pour les peaux sèches et sensibles, développé avec une expertise pharmaceutique et des ingrédients soigneusement sélectionnés pour aider à soutenir la barrière cutanée et maintenir l'hydratation.\n\n✔ Hydratation confortable sans sensation grasse\n✔ Convient aux peaux sèches et sensibles\n✔ Sans parfums ajoutés\n✔ Soutient la barrière cutanée naturelle\n\nUn mélange de lanoline, de miel, de beurre de cacao et d'huiles naturelles pour aider à soutenir la barrière protectrice de la peau et maintenir son hydratation.",
-        "ja": "乾燥肌や敏感肌のための優しいケア。薬剤師の専門知識と選された成分で開発され、肌バリアをサポートし保湿を維持します。\n\n✔ べたつかない快適な保湿\n✔ 乾燥肌・敏感肌に適切\n✔ 香料無添加\n✔ 自然な肌バリアをサポート\n\nラノリン、はちみつ、カカオバター、天然オイルのブレンドが肌の保護バリアをサポートし、水分を保ちます。",
-        "zh": "针对干燥和敏感肌肤的温和护理，采用药剂学专业知识和精心挑选的成分开发，帮助支持皮肤屏障并保持水分。\n\n✔ 舒适保湿，不油腻\n✔ 适合干性和敏感性肌肤\n✔ 不含添加香料\n✔ 支持天然皮肤屏障\n\n羊毛脂、蜂蜜、可可脂和天然油的混合物，有助于支持皮肤的保护屏障并保持水分。",
-        "ko": "건성 및 민감성 피부를 위한 부드러운 케어, 약사 전문성과 엄선된 성분으로 개발되어 피부 장벽을 지원하고 수분을 유지합니다.\n\n✔ 끈적임 없는 편안한 보습\n✔ 건성 및 민감성 피부에 적합\n✔ 인공 향료 무첨가\n✔ 자연스러운 피부 장벽 지원\n\n라놀린, 꿀, 코코아 버터 및 천연 오일의 블렌드가 피부의 보호 장벽을 지원하고 수분을 유지합니다."
+        "en": "Restores and supports the skin barrier with natural ingredients — cocoa butter, honey, and licorice extract.",
+        "ar": "كريم روزيلا لترميم ودعم حاجز البشرة",
+        "de": "Stellt die Hautbarriere wieder her und unterstützt sie mit natürlichen Inhaltsstoffen.",
+        "fr": "Restaure et soutient la barrière cutanée avec des ingrédients naturels.",
+        "ja": "天然成分で肌バリアを回復・サポート。",
+        "zh": "采用天然成分恢复和支持皮肤屏障。",
+        "ko": "천연 성분으로 피부 장벽을 회복하고 지원합니다."
       },
+      "longDescription": {
+        "ar": "تركيبة طبيعية غنية بزبدة الكاكاو والعسل ومستخلص عرق السوس، صُممت لدعم حاجز البشرة وترطيب البشرة الجافة والحساسة بعمق .\n\nمناسب للاستخدام اليومي على اليدين والجسم والمناطق شديدة الجفاف\n\n✔ ترطيب عميق يدوم لفترة أطول\n✔ سريع الامتصاص وغير دهني\n✔ خالٍ من العطور المضافة",
+        "en": "A natural formula rich in cocoa butter, honey, and licorice extract, designed to support the skin barrier and deeply moisturize dry and sensitive skin.\n\nSuitable for daily use on hands, body, and extremely dry areas.\n\n✔ Deep, long-lasting hydration\n✔ Fast-absorbing and non-greasy\n✔ Free from added fragrances",
+        "de": "Eine natürliche Formel, reich an Kakaobutter, Honig und Süßholzextrakt, entwickelt um die Hautbarriere zu unterstützen und trockene sowie empfindliche Haut tiefenwirksam mit Feuchtigkeit zu versorgen.\n\nGeeignet für die tägliche Anwendung auf Händen, Körper und extrem trockenen Stellen.\n\n✔ Tiefenwirksame, langanhaltende Feuchtigkeit\n✔ Zieht schnell ein und fettet nicht\n✔ Ohne zugesetzte Duftstoffe",
+        "fr": "Une formule naturelle riche en beurre de cacao, miel et extrait de réglisse, conçue pour soutenir la barrière cutanée et hydrater en profondeur les peaux sèches et sensibles.\n\nConvient pour une utilisation quotidienne sur les mains, le corps et les zones extrêmement sèches.\n✔ Hydratation profonde et durable\n✔ Absorption rapide et non grasse\n✔ Sans parfums ajoutés",
+        "ja": "カカオバター、はちみつ、カンゾウ根エキスを豊富に含む自然な処方で、肌バリアをサポートし、乾燥肌や敏感肌に深く潤いを与えます。\n\n手、全身、極度に乾燥した部分への毎日の使用に適しています。\n\n✔ 持続する深い保湿\n✔ 速吸収でベタつかない\n✔ 香料無添加",
+        "zh": "富含可可脂、蜂蜜和甘草提取物的天然配方，旨在支持皮肤屏障，为干燥和敏感肌肤提供深层保湿。\n\n适合日常用于双手、身体及极度干燥区域。\n\n✔ 深层持久的补水效果\n✔ 快速吸收，不油腻\n✔ 不含添加香料",
+        "ko": "코코아 버터, 꿀, 감초 추출물이 풍부한 천연 포뮬러로 피부 장벽을 지원하고 건성 및 민감성 피부에 깊은 보습을 제공합니다.\n\n손, 몸, 극도로 건조한 부위에 매일 사용하기 적합합니다.\n\n✔ 오래 지속되는 딥 모이스처\n✔ 빠르게 흡수되며 끈적임 없음\n✔ 인공 향료 무첨가"
+      },
+      "howToUse": {
+        "ar": "ضعي كمية صغيرة على بشرة نظيفة وجافة، ثم دلّكي بلطف حتى الامتصاص الكامل. يكرر الاستخدام حسب الحاجة، خاصة بعد غسل اليدين.",
+        "en": "Apply a small amount to clean, dry skin and gently massage until fully absorbed. Repeat as needed, especially after washing hands.",
+        "de": "Eine kleine Menge auf die saubere, trockene Haut auftragen und sanft einmassieren, bis sie vollständig eingezogen ist. Bei Bedarf wiederholen, besonders nach dem Händewaschen.",
+        "fr": "Appliquez une petite quantité sur une peau propre et sèche, puis massez doucement jusqu'à absorption complète. Renouvelez selon les besoins, en particulier après le lavage des mains.",
+        "ja": "清潔で乾いた肌に適量を取り、完全に吸収されるまで優しくマッサージしてください。必要に応じて、特に手洗い後に繰り返し使用してください。",
+        "zh": "取少量涂抹于清洁干燥的皮肤上，轻轻按摩至完全吸收。根据需要重复使用，尤其是在洗手后。",
+        "ko": "깨끗하고 건조한 피부에 소량을 덜어 부드럽게 마사지하여 완전히 흡수시킵니다. 필요에 따라, 특히 손 씻은 후에 반복 사용하세요."
+      },
+      "keyIngredients": [
+        {
+          "name": { "ar": "زبدة الكاكاو", "en": "Cocoa Butter", "de": "Kakaobutter", "fr": "Beurre de Cacao", "ja": "カカオバター", "zh": "可可脂", "ko": "코코아 버터" },
+          "benefit": { "ar": "تساعد على تغذية البشرة الجافة وتعزيز نعومتها وراحتها.", "en": "Helps nourish dry skin and enhance softness and comfort.", "de": "Hilft, trockene Haut zu nähren und Geschmeidigkeit sowie Wohlbefinden zu fördern.", "fr": "Aide à nourrir les peaux sèches et à améliorer leur douceur et confort.", "ja": "乾燥肌に栄養を与え、なめらかさと快適さを高めます。", "zh": "帮助滋养干燥肌肤，增强柔软度和舒适感。", "ko": "건성 피부에 영양을 공급하고 부드러움과 편안함을 증진시킵니다." }
+        },
+        {
+          "name": { "ar": "العسل", "en": "Honey", "de": "Honig", "fr": "Miel", "ja": "はちみつ", "zh": "蜂蜜", "ko": "꿀" },
+          "benefit": { "ar": "يعمل كمرطب طبيعي يساعد على جذب الرطوبة والاحتفاظ بها داخل البشرة.", "en": "Acts as a natural humectant that helps attract and retain moisture in the skin.", "de": "Wirkt als natürlicher Feuchthaltemittel, das hilft, Feuchtigkeit in der Haut anzuziehen und zu bewahren.", "fr": "Agit comme un humectant naturel qui aide à attirer et retenir l'humidité dans la peau.", "ja": "天然の保湿剤として作用し、肌に水分を引き寄せ保持します。", "zh": "作为天然保湿剂，帮助吸引和保持皮肤水分。", "ko": "천연 보습제로 작용하여 피부에 수분을 끌어들이고 유지하는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "زيت الخروع", "en": "Castor Oil", "de": "Rizinusöl", "fr": "Huile de Ricin", "ja": "ヒマシ油", "zh": "蓖麻油", "ko": "피마자유" },
+          "benefit": { "ar": "يوفر ترطيبًا غنيًا ويساعد على تقليل الخشونة.", "en": "Provides rich moisture and helps reduce roughness.", "de": "Bietet reichhaltige Feuchtigkeit und hilft, Rauheit zu reduzieren.", "fr": "Apporte une hydratation riche et aide à réduire la rugosité.", "ja": "豊富な潤いを提供し、肌のざらつきを軽減します。", "zh": "提供丰富的滋润，帮助减少粗糙。", "ko": "풍부한 보습을 제공하고 거칠기를 줄이는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "زيت جوز الهند", "en": "Coconut Oil", "de": "Kokosöl", "fr": "Huile de Coco", "ja": "ココナッツオイル", "zh": "椰子油", "ko": "코코넛 오일" },
+          "benefit": { "ar": "يساعد على تنعيم البشرة ودعم احتفاظها بالرطوبة.", "en": "Helps soften the skin and supports moisture retention.", "de": "Hilft, die Haut zu glätten und die Feuchtigkeitsbewahrung zu unterstützen.", "fr": "Aide à adoucir la peau et favorise la rétention d'humidité.", "ja": "肌を柔らかくし、水分保持をサポートします。", "zh": "帮助软化肌肤，支持水分保持。", "ko": "피부를 부드럽게 하고 수분 유지를 지원합니다." }
+        },
+        {
+          "name": { "ar": "اللانولين", "en": "Lanolin", "de": "Lanolin", "fr": "Lanoline", "ja": "ラノリン", "zh": "羊毛脂", "ko": "라놀린" },
+          "benefit": { "ar": "يشكل طبقة واقية تساعد على الحد من فقدان الرطوبة.", "en": "Forms a protective layer that helps reduce moisture loss.", "de": "Bildet eine schützende Schicht, die hilft, Feuchtigkeitsverlust zu reduzieren.", "fr": "Forme une couche protectrice qui aide à réduire la perte d'humidité.", "ja": "保護層を形成し、水分の損失を抑えます。", "zh": "形成保护层，帮助减少水分流失。", "ko": "보호막을 형성하여 수분 손실을 줄이는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "مستخلص عرق السوس", "en": "Licorice Extract", "de": "Süßholzextrakt", "fr": "Extrait de Réglisse", "ja": "カンゾウ根エキス", "zh": "甘草提取物", "ko": "감초 추출물" },
+          "benefit": { "ar": "يساعد على تهدئة البشرة ودعم مظهر أكثر تجانسًا.", "en": "Helps soothe the skin and support a more even appearance.", "de": "Hilft, die Haut zu beruhigen und ein gleichmäßigeres Erscheinungsbild zu fördern.", "fr": "Aide à apaiser la peau et à favoriser un aspect plus uniforme.", "ja": "肌を落ち着かせ、より均一な外観をサポートします。", "zh": "帮助舒缓肌肤，支持更均匀的肤色外观。", "ko": "피부를 진정시키고 더 균일한 외관을 지원합니다." }
+        },
+        {
+          "name": { "ar": "الألانتوين", "en": "Allantoin", "de": "Allantoin", "fr": "Allantoïne", "ja": "アラントイン", "zh": "尿囊素", "ko": "알란토인" },
+          "benefit": { "ar": "معروف بخصائصه المهدئة ويساعد على تعزيز راحة البشرة.", "en": "Known for its soothing properties and helps enhance skin comfort.", "de": "Bekannt für seine beruhigenden Eigenschaften und fördert das Hautwohlbefinden.", "fr": "Connu pour ses propriétés apaisantes et aide à améliorer le confort de la peau.", "ja": "鎮静作用で知られ、肌の心地よさを高めます。", "zh": "以其舒缓特性而闻名，有助于增强肌肤舒适度。", "ko": "진정 특성으로 잘 알려져 있으며 피부 편안함을 향상시킵니다." }
+        },
+        {
+          "name": { "ar": "أوليفيم 1000", "en": "Olivem 1000", "de": "Olivem 1000", "fr": "Olivem 1000", "ja": "オリベム1000", "zh": "Olivem 1000", "ko": "올리벰 1000" },
+          "benefit": { "ar": "مستحلب لطيف على البشرة يساعد على تكوين بنية مشابهة لطبيعة البشرة لدعم حاجزها الواقي.", "en": "A skin-friendly emulsifier that helps form a structure similar to the skin's natural composition to support its protective barrier.", "de": "Ein hautfreundlicher Emulgator, der eine der natürlichen Hautzusammensetzung ähnliche Struktur bildet und die Schutzbarriere unterstützt.", "fr": "Un émulsifiant doux pour la peau qui aide à former une structure similaire à la composition naturelle de la peau pour soutenir sa barrière protectrice.", "ja": "肌に優しい乳化剤で、肌本来の組成に似た構造を形成し、保護バリアをサポートします。", "zh": "一种对皮肤温和的乳化剂，有助于形成类似皮肤天然构成的结构，从而支持其保护屏障。", "ko": "피부에 부드러운 유화제로 피부의 자연 구성과 유사한 구조를 형성하여 보호 장벽을 지원합니다." }
+        }
+      ],
       "price": 15.00,
       "currency": "JOD",
-      "image": "/images/rosella-body-cream.jpeg",
+      "image": "/images/bodyCream.jpg",
       "category": {
         "en": "Body Care",
         "ar": "العناية بالجسم",
@@ -75,17 +127,65 @@
         "ko": "로셀라 립밤"
       },
       "description": {
-        "en": "A nourishing lip balm made with natural ingredients to soften, protect and soothe dry lips.\n\n✔ Natural formula\n✔ Moisturizes and protects\n✔ Gentle on sensitive lips",
-        "ar": "بلسم شفاه مغذي مصنوع من مكونات طبيعية لتنعيم وحماية وتهدئة الشفاه الجافة.\n\n✔ تركيبة طبيعية\n✔ يرطب ويحمي\n✔ لطيف على الشفاه الحساسة",
-        "de": "Ein pflegender Lippenbalsam aus natürlichen Inhaltsstoffen, der trockene Lippen weich macht, schützt und beruhigt.\n\n✔ Natürliche Formel\n✔ Befeuchtet und schützt\n✔ Sanft zu empfindlichen Lippen",
-        "fr": "Un baume à lèvres nourrissant à base d'ingrédients naturels pour adoucir, protéger et apaiser les lèvres sèches.\n\n✔ Formule naturelle\n✔ Hydrate et protège\n✔ Doux pour les lèvres sensibles",
-        "ja": "天然成分で作られた栄養豊富なリップバームが、乾いた唇を柔らかくし、保護し、鎮静します。\n\n✔ 天然処方\n✔ 保湿・保護\n✔ 敏感な唇にも優しい",
-        "zh": "采用天然成分制成的滋养润唇膏，可软化、保护和舒缓干燥的双唇。\n\n✔ 天然配方\n✔ 保湿防护\n✔ 温和呵护敏感双唇",
-        "ko": "천연 성분으로 만든 영양 립밤이 건조한 입술을 부드럽게 하고 보호하며 진정시킵니다.\n\n✔ 천연 포뮬러\n✔ 보습 및 보호\n✔ 민감한 입술에도 부드럽게"
+        "en": "Daily hydration for dry and sensitive lips with a carefully selected natural formula.",
+        "ar": "ترطيب يومي للشفاه الجافة والحساسة. تركيبة طبيعية مختارة بعناية.",
+        "de": "Tägliche Feuchtigkeitsversorgung für trockene und empfindliche Lippen mit einer sorgfältig ausgewählten natürlichen Formel.",
+        "fr": "Hydratation quotidienne pour les lèvres sèches et sensibles avec une formule naturelle soigneusement sélectionnée.",
+        "ja": "厳選された自然な処方で、乾燥して敏感な唇に毎日の保湿を。",
+        "zh": "采用精心挑选的天然配方，为干燥和敏感的双唇提供日常补水。",
+        "ko": "엄선된 천연 포뮬러로 건조하고 민감한 입술에 매일 보습을 제공합니다."
       },
+      "longDescription": {
+        "ar": "ترطيب يومي للشفاه الجافة والحساسة. تركيبة طبيعية مختارة بعناية تساعد على تغذية الشفاه، دعم نعومتها، والحفاظ على مظهر صحي ومريح طوال اليوم.\n\n✔ يمنح الشفاه نعومة وراحة دون إحساس مزعج\n✔ يساعد على حماية الشفاه من الجفاف الناتج عن الطقس والعوامل الخارجية\n✔ مناسب للاستخدام اليومي\n✔ خفيف ومريح على الشفاه",
+        "en": "Daily hydration for dry and sensitive lips. A carefully selected natural formula that helps nourish the lips, support softness, and maintain a healthy, comfortable look throughout the day.\n\n✔ Provides softness and comfort without any unpleasant feeling\n✔ Helps protect lips from dryness caused by weather and external factors\n✔ Suitable for daily use\n✔ Light and comfortable on the lips",
+        "de": "Tägliche Feuchtigkeitsversorgung für trockene und empfindliche Lippen. Eine sorgfältig ausgewählte natürliche Formel, die hilft, die Lippen zu nähren, ihre Weichheit zu unterstützen und ein gesundes, angenehmes Aussehen den ganzen Tag über zu bewahren.\n\n✔ Verleiht Weichheit und Komfort ohne unangenehmes Gefühl\n✔ Hilft, die Lippen vor Trockenheit durch Wetter und äußere Einflüsse zu schützen\n✔ Geeignet für die tägliche Anwendung\n✔ Leicht und angenehm auf den Lippen",
+        "fr": "Hydratation quotidienne pour les lèvres sèches et sensibles. Une formule naturelle soigneusement sélectionnée qui aide à nourrir les lèvres, favoriser leur douceur et maintenir un aspect sain et confortable tout au long de la journée.\n\n✔ Apporte douceur et confort sans sensation désagréable\n✔ Aide à protéger les lèvres du dessèchement causé par le temps et les facteurs externes\n✔ Adapté à une utilisation quotidienne\n✔ Léger et confortable sur les lèvres",
+        "ja": "乾燥して敏感な唇に毎日の保湿を。厳選された自然な処方が唇に栄養を与え、柔らかさをサポートし、一日中健康的で快適な状態を保ちます。\n\n✔ 不快感のない柔らかさと快適さを提供\n✔ 天候や外的要因による乾燥から唇を保護\n✔ 毎日の使用に最適\n✔ 軽くて唇に優しい",
+        "zh": "为干燥敏感的双唇提供日常补水。精心挑选的天然配方有助于滋养双唇、保持柔嫩，全天维持健康舒适的外观。\n\n✔ 提供柔嫩舒适感，无任何不适\n✔ 帮助保护双唇免受天气和外部因素导致的干燥\n✔ 适合日常使用\n✔ 质地轻盈，唇感舒适",
+        "ko": "건조하고 민감한 입술에 매일 보습을 제공합니다. 엄선된 천연 포뮬러가 입술에 영양을 공급하고 부드러움을 유지하며 하루 종일 건강하고 편안한 상태를 유지하도록 도와줍니다.\n\n✔ 불쾌한 느낌 없이 부드러움과 편안함 제공\n✔ 날씨와 외부 요인으로 인한 건조로부터 입술 보호\n✔ 매일 사용에 적합\n✔ 가볍고 입술에 편안함"
+      },
+      "howToUse": {
+        "ar": "ضعي طبقة رقيقة من بلسم شفاه روزيلا على الشفاه النظيفة والجافة عند الحاجة.\nيُستخدم يوميًا للمساعدة على الحفاظ على ترطيب الشفاه.\nيُعاد تطبيقه خلال اليوم حسب الحاجة، خاصةً في الأجواء الجافة أو الباردة.\nيمكن استخدامه قبل النوم لدعم راحة الشفاه طوال الليل.\nيمكن استخدامه قبل أحمر الشفاه للمساعدة على منح الشفاه ملمسًا أكثر نعومة.",
+        "en": "Apply a thin layer of Rosella Lip Balm to clean, dry lips as needed.\nUse daily to help maintain lip hydration.\nReapply throughout the day as needed, especially in dry or cold weather.\nCan be used before bedtime to support lip comfort overnight.\nCan be used before lipstick to help provide a smoother texture.",
+        "de": "Tragen Sie bei Bedarf eine dünne Schicht Rosella Lippenbalsam auf die sauberen, trockenen Lippen auf.\nTäglich anwenden, um die Lippenfeuchtigkeit zu erhalten.\nBei Bedarf im Laufe des Tages erneut auftragen, besonders bei trockenem oder kaltem Wetter.\nKann vor dem Schlafengehen verwendet werden, um die Lippen über Nacht zu pflegen.\nKann vor dem Lippenstift aufgetragen werden, um eine glattere Textur zu erzielen.",
+        "fr": "Appliquez une fine couche de Baume à Lèvres Rosella sur les lèvres propres et sèches selon les besoins.\nUtilisez quotidiennement pour aider à maintenir l'hydratation des lèvres.\nRéappliquez au cours de la journée selon les besoins, surtout par temps sec ou froid.\nPeut être utilisé avant le coucher pour favoriser le confort des lèvres pendant la nuit.\nPeut être utilisé avant le rouge à lèvres pour aider à obtenir une texture plus lisse.",
+        "ja": "必要に応じて、清潔で乾いた唇にロゼラリップバームを薄く塗ってください。\n唇の保湿を維持するために毎日ご使用ください。\n乾燥した天气や寒い時期など、必要に応じて日中も塗り直してください。\n就寝前に使用すると、一晩中唇を快適に保ちます。\n口紅の前にお使いいただくと、よりなめらかな質感に整えます。",
+        "zh": "根据需要，取适量Rosella润唇膏薄薄涂抹于清洁干燥的双唇上。\n每日使用，帮助保持双唇水润。\n根据需要全天补涂，尤其是在干燥或寒冷天气。\n可在睡前使用，帮助双唇整夜保持舒适。\n可在涂口红前使用，帮助打造更柔滑的唇部质感。",
+        "ko": "필요에 따라 깨끗하고 건조한 입술에 로셀라 립밤을 얇게 발라주세요.\n입술 보습 유지를 위해 매일 사용하세요.\n건조하거나 추운 날씨에는 필요에 따라 하루 중에도 덧발라 주세요.\n취침 전에 사용하면 밤새 입술을 편안하게 유지할 수 있습니다.\n립스틱 전에 사용하면 더 부드러운 질감을 연출하는 데 도움이 됩니다."
+      },
+      "keyIngredients": [
+        {
+          "name": { "ar": "زبدة الكاكاو", "en": "Cocoa Butter", "de": "Kakaobutter", "fr": "Beurre de Cacao", "ja": "カカオバター", "zh": "可可脂", "ko": "코코아 버터" },
+          "benefit": { "ar": "تساعد على تغذية الشفاه الجافة وتنعيمها.", "en": "Helps nourish and soften dry lips.", "de": "Hilft trockene Lippen zu nähren und zu glätten.", "fr": "Aide à nourrir et adoucir les lèvres sèches.", "ja": "乾いた唇に栄養を与え、柔らかくします。", "zh": "帮助滋养和软化干燥的双唇。", "ko": "건조한 입술에 영양을 공급하고 부드럽게 가꿔줍니다." }
+        },
+        {
+          "name": { "ar": "شمع العسل", "en": "Beeswax", "de": "Bienenwachs", "fr": "Cire d'Abeille", "ja": "ミツロウ", "zh": "蜂蜡", "ko": "비즈왁스" },
+          "benefit": { "ar": "يشكل حاجزًا واقيًا يساعد على حبس الرطوبة داخل الشفاه.", "en": "Forms a protective barrier that helps lock moisture into the lips.", "de": "Bildet eine schützende Barriere, die hilft, Feuchtigkeit in den Lippen einzuschließen.", "fr": "Forme une barrière protectrice qui aide à retenir l'humidité dans les lèvres.", "ja": "保護バリアを形成し、唇の水分を閉じ込めます。", "zh": "形成保护屏障，帮助锁住唇部水分。", "ko": "보호 장벽을 형성하여 입술에 수분을 가둬줍니다." }
+        },
+        {
+          "name": { "ar": "اللانولين", "en": "Lanolin", "de": "Lanolin", "fr": "Lanoline", "ja": "ラノリン", "zh": "羊毛脂", "ko": "라놀린" },
+          "benefit": { "ar": "يساعد على توفير ترطيب طويل الأمد وتعزيز راحة الشفاه.", "en": "Helps provide long-lasting moisture and enhance lip comfort.", "de": "Hilft lang anhaltende Feuchtigkeit zu spenden und den Lippenkomfort zu verbessern.", "fr": "Aide à fournir une hydratation durable et à améliorer le confort des lèvres.", "ja": "長時間の潤いを提供し、唇の快適さを高めます。", "zh": "帮助提供持久保湿，增强双唇舒适度。", "ko": "오래 지속되는 보습을 제공하고 입술의 편안함을 향상시킵니다." }
+        },
+        {
+          "name": { "ar": "زيت ثمر الورد", "en": "Rosehip Oil", "de": "Hagebuttenöl", "fr": "Huile de Rose Musquée", "ja": "ローズヒップオイル", "zh": "玫瑰果油", "ko": "로즈힙 오일" },
+          "benefit": { "ar": "غني بمضادات الأكسدة ويساعد على الحفاظ على مظهر صحي للشفاه.", "en": "Rich in antioxidants and helps maintain a healthy look for the lips.", "de": "Reich an Antioxidantien und hilft, ein gesundes Aussehen der Lippen zu bewahren.", "fr": "Riche en antioxydants et aide à maintenir un aspect sain des lèvres.", "ja": "抗酸化物質が豊富で、唇の健康的な外観を維持します。", "zh": "富含抗氧化剂，有助于保持双唇健康外观。", "ko": "항산화 성분이 풍부하여 입술의 건강한 외관을 유지하는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "فيتامين هـ (Vitamin E)", "en": "Vitamin E (Tocopherol)", "de": "Vitamin E (Tocopherol)", "fr": "Vitamine E (Tocophérol)", "ja": "ビタミンE（トコフェロール）", "zh": "维生素E（生育酚）", "ko": "비타민 E(토코페롤)" },
+          "benefit": { "ar": "يساعد على حماية الشفاه والحفاظ على نعومتها.", "en": "Helps protect the lips and maintain softness.", "de": "Hilft die Lippen zu schützen und ihre Weichheit zu bewahren.", "fr": "Aide à protéger les lèvres et à maintenir leur douceur.", "ja": "唇を保護し、柔らかさを保つのを助けます。", "zh": "帮助保护双唇并保持柔嫩。", "ko": "입술을 보호하고 부드러움을 유지하는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "زيت جوز الهند", "en": "Coconut Oil", "de": "Kokosöl", "fr": "Huile de Coco", "ja": "ココナッツオイル", "zh": "椰子油", "ko": "코코넛 오일" },
+          "benefit": { "ar": "يوفر النعومة ويساعد على تقليل الجفاف.", "en": "Provides softness and helps reduce dryness.", "de": "Sorgt für Geschmeidigkeit und hilft Trockenheit zu reduzieren.", "fr": "Apporte de la douceur et aide à réduire la sécheresse.", "ja": "柔らかさを提供し、乾燥を軽減します。", "zh": "提供柔滑感，帮助减少干燥。", "ko": "부드러움을 제공하고 건조를 줄이는 데 도움을 줍니다." }
+        },
+        {
+          "name": { "ar": "مستخلص المانجو", "en": "Mango Extract", "de": "Mangofruchtextrakt", "fr": "Extrait de Mangue", "ja": "マンゴー果実エキス", "zh": "芒果提取物", "ko": "망고 추출물" },
+          "benefit": { "ar": "يساعد على تغذية الشفاه ومنحها ملمسًا أكثر نعومة.", "en": "Helps nourish the lips and give them a softer texture.", "de": "Hilft die Lippen zu nähren und ihnen eine weichere Textur zu verleihen.", "fr": "Aide à nourrir les lèvres et à leur donner une texture plus douce.", "ja": "唇に栄養を与え、より柔らかな質感をもたらします。", "zh": "帮助滋养双唇，打造更柔滑的唇部质感。", "ko": "입술에 영양을 공급하고 더 부드러운 질감을 선사합니다." }
+        }
+      ],
       "price": 5.00,
       "currency": "JOD",
-      "image": "/images/rosella-lip-balm.png",
+      "image": "/images/lipBalm.jpg",
       "category": {
         "en": "Lip Care",
         "ar": "العناية بالشفاه",

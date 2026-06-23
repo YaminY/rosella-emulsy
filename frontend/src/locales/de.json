@@ -47,6 +47,11 @@
     "outOfStock": "Demnächst",
     "size": "Größe",
     "ingredients": "Inhaltsstoffe",
+    "description": "Beschreibung",
+    "howToUse": "Anwendung",
+    "keyIngredients": "Hauptinhaltsstoffe",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
     "currency": "JOD",
     "approx": "≈ {amount} {currency}"
   },

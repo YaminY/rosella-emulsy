@@ -47,6 +47,11 @@
     "outOfStock": "Bientôt disponible",
     "size": "Taille",
     "ingredients": "Ingrédients",
+    "description": "Description",
+    "howToUse": "Mode d'emploi",
+    "keyIngredients": "Ingrédients clés",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins",
     "currency": "JOD",
     "approx": "≈ {amount} {currency}"
   },

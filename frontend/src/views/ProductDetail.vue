@@ -62,6 +62,57 @@
         <button v-else disabled class="bg-gray-200 text-gray-400 px-10 py-4 rounded-lg text-lg font-medium cursor-not-allowed w-full sm:w-auto">
           {{ $t('products.outOfStock') }}
         </button>
+
+        <!-- Collapsible Details Section -->
+        <div v-if="hasDetails" class="mt-10 pt-8 border-t border-gray-200">
+          <button
+            @click="expanded = !expanded"
+            class="flex items-center justify-between w-full text-left"
+          >
+            <span class="text-base font-semibold text-gray-800">{{ expanded ? $t('products.showLess') : $t('products.showMore') }}</span>
+            <svg
+              class="w-5 h-5 text-gray-500 transition-transform duration-200"
+              :class="{ 'rotate-180': expanded }"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div
+            v-if="expanded"
+            class="mt-6 space-y-8"
+          >
+            <!-- Long Description -->
+            <div v-if="product.longDescription?.[currentLocale]">
+              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.description') }}</h4>
+              <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ product.longDescription[currentLocale] }}</p>
+            </div>
+
+            <!-- How to Use -->
+            <div v-if="product.howToUse?.[currentLocale]">
+              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.howToUse') }}</h4>
+              <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ product.howToUse[currentLocale] }}</p>
+            </div>
+
+            <!-- Key Ingredients -->
+            <div v-if="product.keyIngredients?.length">
+              <h4 class="text-sm font-semibold text-gray-800 uppercase tracking-wider mb-3">{{ $t('products.keyIngredients') }}</h4>
+              <ul class="space-y-3">
+                <li
+                  v-for="(item, index) in product.keyIngredients"
+                  :key="index"
+                  class="text-base"
+                >
+                  <span class="font-medium text-gray-800">{{ item.name[currentLocale] }}</span>
+                  <span class="text-gray-500"> — {{ item.benefit[currentLocale] }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -90,6 +141,7 @@ const { getProductBySlug } = useProducts()
 
 const currentLocale = computed(() => locale.value)
 const imageError = ref(false)
+const expanded = ref(false)
 
 const product = computed(() => {
   const slug = route.params.slug
@@ -98,6 +150,7 @@ const product = computed(() => {
 
 watch(product, () => {
   imageError.value = false
+  expanded.value = false
 })
 
 const primaryPrice = computed(() => {
@@ -115,6 +168,15 @@ const showBasePrice = computed(() => primaryPrice.value.currency !== 'JOD')
 const secondaryPrices = computed(() => {
   if (!product.value) return []
   return getSecondaryPrices(product.value.price, locale.value)
+})
+
+const hasDetails = computed(() => {
+  if (!product.value) return false
+  return !!(
+    product.value.longDescription?.[locale.value] ||
+    product.value.howToUse?.[locale.value] ||
+    product.value.keyIngredients?.length
+  )
 })
 
 // Dynamic SEO meta tags from product data
