@@ -253,7 +253,6 @@ const showDeleteConfirm = ref(false)
 const editingProduct = ref(null)
 const deletingProduct = ref(null)
 const toast = ref('')
-let nextId = ref(6)
 
 const languages = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -356,7 +355,7 @@ function startEditProduct(product) {
   showForm.value = true
 }
 
-function saveProduct() {
+async function saveProduct() {
   const productData = {
     name: { ...form.name },
     description: { ...form.description },
@@ -378,22 +377,31 @@ function saveProduct() {
     currency: 'JOD',
   }
 
-  if (editingProduct.value) {
-    productData.id = editingProduct.value.id
-    const index = allProducts.value.findIndex(p => p.id === editingProduct.value.id)
-    if (index !== -1) {
-      allProducts.value[index] = productData
+  try {
+    if (editingProduct.value) {
+      productData.id = editingProduct.value.id
+      // Update on backend
+      const response = await productsAPI.update(productData.id, productData)
+      if (response?.product) {
+        // Update local state with backend response
+        const index = allProducts.value.findIndex(p => p.id === editingProduct.value.id)
+        if (index !== -1) {
+          allProducts.value[index] = response.product
+        }
+      }
+      showToast('Product updated successfully')
+    } else {
+      // Create on backend
+      const response = await productsAPI.create(productData)
+      if (response?.product) {
+        // Add the backend-returned product (has real ID from backend)
+        allProducts.value.push(response.product)
+      }
+      showToast('Product added successfully')
     }
-    showToast('Product updated successfully')
-    // TODO: Also save to backend
-    // productsAPI.update(productData.id, productData)
-  } else {
-    productData.id = nextId
-    nextId.value++
-    allProducts.value.push(productData)
-    showToast('Product added successfully')
-    // TODO: Also save to backend
-    // productsAPI.create(productData)
+  } catch (err) {
+    showToast('Failed to save to backend. Please try again.')
+    console.error('Failed to save product:', err)
   }
 
   showForm.value = false
@@ -404,15 +412,21 @@ function confirmDelete(product) {
   showDeleteConfirm.value = true
 }
 
-function performDelete() {
+async function performDelete() {
   if (deletingProduct.value) {
-    const index = allProducts.value.findIndex(p => p.id === deletingProduct.value.id)
-    if (index !== -1) {
-      allProducts.value.splice(index, 1)
+    try {
+      // Delete from backend
+      await productsAPI.delete(deletingProduct.value.id)
+      // Remove from local state
+      const index = allProducts.value.findIndex(p => p.id === deletingProduct.value.id)
+      if (index !== -1) {
+        allProducts.value.splice(index, 1)
+      }
+      showToast('Product deleted successfully')
+    } catch (err) {
+      showToast('Failed to delete from backend. Please try again.')
+      console.error('Failed to delete product:', err)
     }
-    // TODO: Also delete from backend
-    // productsAPI.delete(deletingProduct.value.id)
-    showToast('Product deleted successfully')
   }
   showDeleteConfirm.value = false
   deletingProduct.value = null
