@@ -84,6 +84,7 @@
       "price": 15.00,
       "currency": "JOD",
       "image": "/images/bodyCream.jpg",
+      "images": ["/images/bodyCream.jpg"],
       "category": {
         "en": "Body Care",
         "ar": "العناية بالجسم",
@@ -186,6 +187,7 @@
       "price": 5.00,
       "currency": "JOD",
       "image": "/images/lipBalm.jpg",
+      "images": ["/images/lipBalm.jpg"],
       "category": {
         "en": "Lip Care",
         "ar": "العناية بالشفاه",
@@ -240,6 +242,7 @@
       "price": 0,
       "currency": "JOD",
       "image": "",
+      "images": [],
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -294,6 +297,7 @@
       "price": 0,
       "currency": "JOD",
       "image": "",
+      "images": [],
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",
@@ -348,6 +352,7 @@
       "price": 0,
       "currency": "JOD",
       "image": "",
+      "images": [],
       "category": {
         "en": "Hair Care",
         "ar": "العناية بالشعر",

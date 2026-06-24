@@ -83,18 +83,34 @@
                 <h3 class="font-semibold text-sm text-gray-800 border-b border-gray-200 pb-2">📋 Basic Info</h3>
                 <div class="grid grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Price (JOD)</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">💰 Price (JOD)</label>
                     <input v-model="form.price" type="number" step="0.01" class="input-field" required />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Size</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">📦 Size</label>
                     <input v-model="form.size" class="input-field" required />
                   </div>
                 </div>
 
+                <!-- Multiple Images -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Image Path</label>
-                  <input v-model="form.image" class="input-field" placeholder="/images/product.jpg" />
+                  <label class="block text-sm font-medium text-gray-700 mb-1">🖼️ Product Images</label>
+                  <div v-for="(img, idx) in form.images" :key="idx" class="flex items-start gap-2 mb-2">
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2">
+                        <input v-model="form.images[idx]" class="input-field flex-1" placeholder="Paste URL or upload below" />
+                        <button type="button" @click="removeImage(idx)" class="text-red-400 hover:text-red-600 text-xs mt-1">✕</button>
+                      </div>
+                      <div class="flex items-center gap-2 mt-1">
+                        <label class="text-xs text-primary hover:text-primary/70 font-medium cursor-pointer">
+                          📁 Upload File
+                          <input type="file" accept="image/*" class="hidden" @change="uploadImage($event, idx)" />
+                        </label>
+                      </div>
+                      <img v-if="form.images[idx]" :src="form.images[idx]" class="mt-1 w-20 h-20 object-cover rounded border" @error="$event.target.style.display='none'" />
+                    </div>
+                  </div>
+                  <button type="button" @click="addImage" class="text-xs text-primary hover:text-primary/70 font-medium">+ Add Image</button>
                 </div>
 
                 <div class="flex items-center gap-6">
@@ -104,32 +120,66 @@
                   </div>
                   <div class="flex items-center gap-3">
                     <input v-model="form.featured" type="checkbox" id="featured" class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary" />
-                    <label for="featured" class="text-sm font-medium text-gray-700">Featured</label>
+                    <label for="featured" class="text-sm font-medium text-gray-700">⭐ Featured</label>
                   </div>
                 </div>
               </div>
 
-              <p class="text-xs text-gray-500 bg-yellow-50 p-3 rounded-lg">{{ $t('admin.languageNote') }}</p>
-
-              <!-- ===== SECTION 2: Per-Language Content ===== -->
+              <!-- ===== SECTION 2: Per-Language Content (Collapsible Cards) ===== -->
               <div v-for="lang in languages" :key="lang.code" class="border border-gray-200 rounded-xl overflow-hidden">
-                <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                <!-- Card Header (clickable) -->
+                <button
+                  type="button"
+                  @click="toggleLang(lang.code)"
+                  class="flex items-center justify-between w-full bg-gray-50 px-4 py-3 border-b border-gray-200 hover:bg-gray-100 transition-colors"
+                >
                   <h3 class="font-semibold text-sm text-gray-800">{{ lang.flag }} {{ lang.label }}</h3>
-                </div>
-                <div class="p-4 space-y-3">
-                  <input v-model="form.name[lang.code]" :placeholder="`Product Name (${lang.label})`" class="input-field" required />
-                  <input v-model="form.slug[lang.code]" :placeholder="`URL slug (${lang.code}) — e.g. rosella-body-cream`" class="input-field text-xs" required />
-                  <textarea v-model="form.description[lang.code]" :placeholder="`Short description — shown on product cards (${lang.label})`" class="input-field min-h-[60px]" required></textarea>
-                  <textarea v-model="form.longDescription[lang.code]" :placeholder="`Long description — shown in expandable section on product page (${lang.label})`" class="input-field min-h-[80px]"></textarea>
-                  <textarea v-model="form.howToUse[lang.code]" :placeholder="`How to use — shown in expandable section (${lang.label})`" class="input-field min-h-[60px]"></textarea>
-                  <input v-model="form.category[lang.code]" :placeholder="`Category (${lang.label}) — e.g. Body Care`" class="input-field" required />
-                  <input v-model="form.ingredients[lang.code]" :placeholder="`Full ingredients list (${lang.label})`" class="input-field" required />
+                  <svg
+                    class="w-4 h-4 text-gray-400 transition-transform duration-200"
+                    :class="{ 'rotate-180': openLangs[lang.code] }"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <!-- Card Body (collapsible) -->
+                <div v-if="openLangs[lang.code]" class="p-4 space-y-3">
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">📝 Product Name</label>
+                    <input v-model="form.name[lang.code]" :placeholder="`e.g. Rosella Body Cream (${lang.label})`" class="input-field" required />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">🔗 URL Slug</label>
+                    <input v-model="form.slug[lang.code]" :placeholder="`e.g. rosella-body-cream (${lang.code})`" class="input-field text-xs" required />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">📄 Short Description (shown on product cards)</label>
+                    <textarea v-model="form.description[lang.code]" :placeholder="`Brief description for product cards (${lang.label})`" class="input-field min-h-[60px]" required></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">📖 Long Description (expandable detail section)</label>
+                    <textarea v-model="form.longDescription[lang.code]" :placeholder="`Detailed description shown in expandable section (${lang.label})`" class="input-field min-h-[80px]"></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">🖐️ How to Use</label>
+                    <textarea v-model="form.howToUse[lang.code]" :placeholder="`Usage instructions shown in expandable section (${lang.label})`" class="input-field min-h-[60px]"></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">🏷️ Category</label>
+                    <input v-model="form.category[lang.code]" :placeholder="`e.g. Body Care (${lang.label})`" class="input-field" required />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">🧪 Full Ingredients List</label>
+                    <textarea v-model="form.ingredients[lang.code]" :placeholder="`Complete list of ingredients (${lang.label})`" class="input-field min-h-[60px]" required></textarea>
+                  </div>
 
                   <!-- Key Ingredients for this language -->
                   <div class="border-t border-gray-100 pt-3 mt-2">
                     <div class="flex items-center justify-between mb-2">
-                      <span class="text-xs font-medium text-gray-500">Key Ingredients ({{ lang.label }})</span>
-                      <button type="button" @click="addIngredient" class="text-xs text-primary hover:text-primary/70 font-medium">+ Add</button>
+                      <span class="text-xs font-medium text-gray-500">🌿 Key Ingredients ({{ lang.label }})</span>
+                      <button type="button" @click="addIngredient(lang.code)" class="text-xs text-primary hover:text-primary/70 font-medium">+ Add</button>
                     </div>
                     <div v-if="form.keyIngredients.length === 0" class="text-xs text-gray-400 italic">No key ingredients defined. Click "+ Add" above to add one.</div>
                     <div v-for="(ing, idx) in form.keyIngredients" :key="idx" class="flex items-start gap-2 mb-1.5 pb-1.5 border-b border-gray-50 last:border-b-0">
@@ -215,12 +265,24 @@ const languages = [
   { code: 'ko', label: '한국어', flag: '🇰🇷' },
 ]
 
+// Track which language cards are expanded (all start collapsed)
+const openLangs = reactive({})
+languages.forEach(l => { openLangs[l.code] = false })
+
+function toggleLang(code) {
+  openLangs[code] = !openLangs[code]
+}
+
+function resetOpenLangs() {
+  languages.forEach(l => { openLangs[l.code] = false })
+}
+
 const emptyForm = () => ({
   price: 0,
   size: '30ml',
   available: true,
   featured: false,
-  image: '',
+  images: [],
   name: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   description: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
   slug: { en: '', ar: '', de: '', fr: '', ja: '', zh: '', ko: '' },
@@ -252,17 +314,26 @@ function handleLogout() {
 function startAddProduct() {
   editingProduct.value = null
   Object.assign(form, emptyForm())
+  resetOpenLangs()
   showForm.value = true
 }
 
 function startEditProduct(product) {
   editingProduct.value = product
+  // Build images array from product
+  let images = []
+  if (product.images && Array.isArray(product.images)) {
+    images = [...product.images]
+  } else if (product.image) {
+    images = [product.image]
+  }
+
   Object.assign(form, {
     price: product.price,
     size: product.size,
     available: product.available,
     featured: product.featured,
-    image: product.image || '',
+    images,
     name: { ...product.name },
     description: { ...product.description },
     slug: { ...product.slug },
@@ -281,6 +352,7 @@ function startEditProduct(product) {
         }))
       : [],
   })
+  resetOpenLangs()
   showForm.value = true
 }
 
@@ -301,7 +373,8 @@ function saveProduct() {
     size: form.size,
     available: form.available,
     featured: form.featured,
-    image: form.image || '/images/placeholder.jpg',
+    images: [...form.images],
+    image: form.images.length > 0 ? form.images[0] : '/images/placeholder.jpg',
     currency: 'JOD',
   }
 
@@ -343,6 +416,26 @@ function performDelete() {
   }
   showDeleteConfirm.value = false
   deletingProduct.value = null
+}
+
+function addImage() {
+  form.images.push('')
+}
+
+function removeImage(idx) {
+  form.images.splice(idx, 1)
+}
+
+function uploadImage(event, idx) {
+  const file = event.target.files[0]
+  if (!file) return
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    form.images[idx] = e.target.result
+  }
+  reader.readAsDataURL(file)
+  // Reset input so same file can be re-selected
+  event.target.value = ''
 }
 
 function addIngredient() {
