@@ -13,6 +13,26 @@ const api = axios.create({
   timeout: 30000,
 })
 
+// Store admin token (resets on page load — user must re-login)
+let adminToken = null
+
+export function setAdminToken(token) {
+  adminToken = token
+}
+
+export function getAdminToken() {
+  return adminToken
+}
+
+// For admin-protected API calls, add the token header
+function adminHeaders() {
+  const headers = {}
+  if (adminToken) {
+    headers['x-admin-token'] = adminToken
+  }
+  return headers
+}
+
 export const productsAPI = {
   async getAll() {
     const { data } = await api.get('/products')
@@ -25,17 +45,17 @@ export const productsAPI = {
   },
 
   async create(product) {
-    const { data } = await api.post('/products', product)
+    const { data } = await api.post('/products', product, { headers: adminHeaders() })
     return data
   },
 
   async update(id, product) {
-    const { data } = await api.put(`/products/${id}`, product)
+    const { data } = await api.put(`/products/${id}`, product, { headers: adminHeaders() })
     return data
   },
 
   async delete(id) {
-    const { data } = await api.delete(`/products/${id}`)
+    const { data } = await api.delete(`/products/${id}`, { headers: adminHeaders() })
     return data
   },
 }
@@ -54,7 +74,7 @@ export const adminAPI = {
   },
 
   async verify() {
-    const { data } = await api.get('/admin/verify')
+    const { data } = await api.get('/admin/verify', { headers: adminHeaders() })
     return data
   },
 }

@@ -231,7 +231,7 @@ import { ref, reactive, computed } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
 import { useProducts } from '@/composables/useProducts'
-import { productsAPI, adminAPI } from '@/services/api'
+import { productsAPI, adminAPI, setAdminToken } from '@/services/api'
 
 const { locale } = useI18n()
 
@@ -294,14 +294,18 @@ const emptyForm = () => ({
 
 const form = reactive(emptyForm())
 
-function handleLogin() {
-  // TODO: Replace with actual admin API call
-  // const response = await adminAPI.login(password.value)
-  if (password.value === 'admin123') {
-    isAuthenticated.value = true
-    loginError.value = ''
-  } else {
-    loginError.value = 'Incorrect password'
+async function handleLogin() {
+  try {
+    const response = await adminAPI.login(password.value)
+    if (response?.token) {
+      setAdminToken(response.token)
+      isAuthenticated.value = true
+      loginError.value = ''
+    } else {
+      loginError.value = 'Incorrect password'
+    }
+  } catch (err) {
+    loginError.value = 'Login failed. Is the backend running?'
   }
 }
 
